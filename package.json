@@ -47,7 +47,7 @@
   ],
   "license": "GPLv3",
   "main": "bin/main.js",
-  "name": "tidebitbridge",
+  "name": "TideBit Bridge",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BOLT-Protocol/TideBitBridge.git"
