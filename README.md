@@ -1,5 +1,5 @@
 # TideBitBridge
-The Cross Chain Channel for Transfering Crypto Assets to TideBit Chain
+Cross Chain Channel for Transfering Crypto Assets to TideBit Chain
 
 ## Setup Environment
 * Ubuntu 18.04 and 20.04
