@@ -15,4 +15,4 @@ cd TideBitBridge
 npm i
 
 ### Start Service
-pm2 start .
+pm2 start . --name TideBit Bridge
