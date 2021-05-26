@@ -40,3 +40,7 @@ sudo ln -s $PARENT_LOCATION/$NODE_FILENAME/bin/npm /usr/local/bin
 
 ### assign 80 & 443 port ###
 sudo setcap 'cap_net_bind_service=+ep' $PARENT_LOCATION/$NODE_FILENAME/bin/node
+
+### Install PM2 ###
+sudo npm i -g pm2
+sudo ln -s $PARENT_LOCATION/$NODE_FILENAME/bin/pm2 /usr/local/bin
