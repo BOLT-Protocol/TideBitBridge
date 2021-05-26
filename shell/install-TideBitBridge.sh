@@ -16,3 +16,4 @@ npm i
 
 ### Start Service
 pm2 start . --name TideBit Bridge
+echo "pm2 start . --name TideBit Bridge" | sudo tee -a /etc/fstab
