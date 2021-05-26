@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # MerMer-framework
 MerMer Framework for Front End and Back End
+=======
+# TideBitBridge
+Cross Chain Channel for Transfering Crypto Assets to TideBit Chain
+>>>>>>> d6b0e431b858c9814a83e8b33728f8af1f655170
 
 ## Install
 ```shell
