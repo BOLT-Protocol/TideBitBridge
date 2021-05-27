@@ -1,9 +1,9 @@
 # TideBitBridge
 Cross Chain Channel for Transfering Crypto Assets to TideBit Chain
 
-## Services Port
-- 80: HTTP
-- 443: HTTPS
+## Service Port
+- 80 HTTP
+- 443 HTTPS
 
 ## Setup Environment
 * Ubuntu 18.04 and 20.04
