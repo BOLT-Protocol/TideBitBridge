@@ -48,7 +48,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  background-color: aquamarine; }
 
 html {
   font-size: 62.5%; }

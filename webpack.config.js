@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const fs = require("fs");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 function getExternals() {
   const nodeModules = fs.readdirSync(path.join(process.cwd(), "node_modules"));
@@ -19,6 +20,14 @@ const frontend = {
     filename: "javascript/main.js",
     chunkFilename: "javascript/[id].js",
   },
+  devServer: {
+    watchOptions: {
+      poll: true,
+    },
+    contentBase: path.join(__dirname, "build/frontend/"),
+    compress: true,
+    port: 9000,
+  },
   module: {
     rules: [
       {
@@ -26,8 +35,8 @@ const frontend = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "sass-loader",
           "postcss-loader",
+          "sass-loader",
         ],
       },
       {
@@ -37,7 +46,7 @@ const frontend = {
             loader: "file-loader",
             options: {
               name: "image/[name].[ext]", // 修改生成路徑
-              publicPath: '../', // 修改公共路徑
+              publicPath: "../", // 修改公共路徑
             },
           },
         ],
@@ -45,12 +54,12 @@ const frontend = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].css",
-      chunkFilename: "css/[id].css",
+      filename: devMode ? "css/[name].css" : "css/[name].[contenthash].css",
+      chunkFilename: devMode ? "css/[id].css" : "css/[id].[contenthash].css",
     }),
+    devMode ? new webpack.HotModuleReplacementPlugin() : null,
   ],
 };
 
