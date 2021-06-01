@@ -9,6 +9,9 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 
   @supports (-webkit-backdrop-filter: blur(10px)) or
     (backdrop-filter: blur(10px)) {
@@ -19,15 +22,28 @@
 
   &__content {
     @include absCenter;
-
-    width: 75%;
-    background-color: $color-white;
+    width: #{"calc(100vw - 3rem)"};
+    max-height: #{"calc(100vh - 3rem)"};
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
-    border-radius: 5px;
+    
+    border-radius: 1em;
+    background-color: $color-white;
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
+  }
+  @media (min-width: 48em) {
+    &__content {
+      height: auto;
+      width: 50vw;
+      max-height: #{"min(38.75rem, 75vh)"};
+      max-width: 31.25em;
+    }
   }
 
   //Open states
