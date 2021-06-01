@@ -31,12 +31,14 @@
   }
 
   //Open states
-  &.open {
+  #wallet-connect:checked + &,
+  #assets-selector:checked + & {
     opacity: 1;
     visibility: visible;
   }
 
-  &.open &__content {
+  #wallet-connect:checked + & > &__content,
+  #assets-selector:checked + & > &__content {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }

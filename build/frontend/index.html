@@ -29,39 +29,39 @@
                     <li class="button__pill "><a href="#">TideBit Bridge</a></li>
                 </ui>
                 <li class="navigation__item">
-                    <div class="navigation__dropdown-button button button__block" id="exchange"><span
+                    <div class="dropdown__button button button__block" id="exchange"><span
                             class="text margin__right--small">Exchange</span><i class="fas fa-caret-down"></i></div>
-                    <input type="checkbox" class="navigation__dropdown-toggle" checked>
-                    <ul class="navigation__dropdown-menu">
-                        <li class="navigation__dropdown-item"><a href="#">1</a></li>
-                        <li class="navigation__dropdown-item"><a href="#">2</a></li>
-                        <li class="navigation__dropdown-item"><a href="#">3</a></li>
+                    <input type="checkbox" class="dropdown__toggle" checked>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="#">1</a></li>
+                        <li class="dropdown__item"><a href="#">2</a></li>
+                        <li class="dropdown__item"><a href="#">3</a></li>
                     </ul>
                 </li>
                 <li class="navigation__item">
-                    <div class="navigation__dropdown-button button button__block" id="wallet"><span
+                    <div class="dropdown__button button button__block" id="wallet"><span
                             class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i></div>
-                    <input type="checkbox" class="navigation__dropdown-toggle" checked>
-                    <ul class="navigation__dropdown-menu">
-                        <li class="navigation__dropdown-item"><a href="#">1</a></li>
-                        <li class="navigation__dropdown-item"><a href="#">2</a></li>
-                        <li class="navigation__dropdown-item"><a href="#">3</a></li>
+                    <input type="checkbox" class="dropdown__toggle" checked>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="#">1</a></li>
+                        <li class="dropdown__item"><a href="#">2</a></li>
+                        <li class="dropdown__item"><a href="#">3</a></li>
                     </ul>
                 </li>
                 <li class="navigation__item">
-                    <div class="navigation__dropdown-button button button__block" id="explorer"><span
+                    <div class="dropdown__button button button__block" id="explorer"><span
                             class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i></div>
-                    <input type="checkbox" class="navigation__dropdown-toggle" checked>
-                    <ul class="navigation__dropdown-menu">
-                        <li class="navigation__dropdown-item"><a href="#">1</a></li>
-                        <li class="navigation__dropdown-item"><a href="#">2</a></li>
-                        <li class="navigation__dropdown-item"><a href="#">3</a></li>
+                    <input type="checkbox" class="dropdown__toggle" checked>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="#">1</a></li>
+                        <li class="dropdown__item"><a href="#">2</a></li>
+                        <li class="dropdown__item"><a href="#">3</a></li>
                     </ul>
                 </li>
             </ui>
         </nav>
         <div class="header__button">
-            <li class="button button__block button--primary "><a href="#">Connect Wallet</a></li>
+            <label for="wallet-connect" class="button button__block button--primary ">Connect Wallet</label>
         </div>
     </header>
     <div class="size-box size-box__height--medium"></div>
@@ -69,10 +69,10 @@
         <section class="section">
             <div class="pannel pannel--main form">
                 <div class="form__title">Assets</div>
-                <div class="button button__block button--grey"><span>ETH</span></div>
+                <label for="assets-selector" class="form__selector button button__block"><span>ETH</span></label for="assets-selector">
                 <div class="size-box size-box__height--small"></div>
                 <div class="form__container">
-                    <div class="card__container">
+                    <div class="form__card-container">
                         <div class="form__title">From</div>
                         <div class="card">
                             <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH"></div>
@@ -87,7 +87,7 @@
                     <div class="card__switch button--grey">
                         <i class="fas fa-arrow-right"></i>
                     </div>
-                    <div class="card__container">
+                    <div class="form__card-container">
                         <div class="form__title">To</div>
                         <div class="card">
                             <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH"></div>
@@ -114,8 +114,8 @@
                         class="form__hint-text--amount">0 ETH</span><span class="button__pill margin__left--small">BEP
                         20</span></div>
                 <div class="size-box size-box__height--medium"></div>
-
-                <div class="button button__block button--primary form__button"><span>Connect Wallet</span></div>
+                <label for="wallet-connect" class="button button__block button--primary form__button">Connect
+                    Wallet</label>
             </div>
             <div class="pannel pannel--sub">
                 <div class="heading__primary">TideBit Bridge</div>
@@ -130,6 +130,7 @@
                 <div class="button button__block button--text">User Guide</div>
             </div>
         </section>
+
     </main>
     <div class="size-box size-box__height--medium"></div>
     <footer class="footer">
@@ -145,25 +146,49 @@
             <div class='col-1-of-2'>
                 <div class="footer__container">
                     <div class="footer__social-media">
-                        <div class="button__icon button--grey">
-                            <a href="https://t.me/tidebitofficial" target="_blank"><img
-                                    src="https://www.tidebit.one/telegram_footer_logo.svg"></a>
+                        <div class="button__icon">
+                            <a href="https://t.me/tidebitofficial" target="_blank"><i
+                                    class="fab fa-telegram-plane"></i></a>
                         </div>
-                        <div class="button__icon button--grey">
-                            <a href="https://www.facebook.com/tidebit" target="_blank"><img
-                                    src="https://www.tidebit.one/facebook_footer_logo.svg"></a>
+                        <div class="button__icon">
+                            <a href="https://www.facebook.com/tidebit" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </div>
-                        <div class="button__icon button--grey">
-                            <a href="https://www.facebook.com/tidebit" target="_blank"><img
-                                    src="https://www.tidebit.one/linkedin_footer_logo.svg"></a>
+                        <div class="button__icon">
+                            <a href="https://www.facebook.com/tidebit" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="button  button__inline button--grey"><i
-                            class="fas fa-globe-americas margin__right--small"></i><span
-                            class="margin__right--small">English</span><i class="fas fa-caret-down margin__left--small"></i></div>
+                    <div class="dropdown__button">
+                        <div class="button  button__inline button--grey" id="i18n"><i
+                                class="fas fa-globe-americas margin__right--small"></i><span
+                                class="margin__right--small">English</span><i
+                                class="fas fa-caret-down margin__left--small"></i></div>
+                        <input type="checkbox" class="dropdown__toggle" checked>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="#">1</a></li>
+                            <li class="dropdown__item"><a href="#">2</a></li>
+                            <li class="dropdown__item"><a href="#">3</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        </div>
     </footer>
+    <input type="checkbox"  id="assets-selector">
+    <div class="popup">
+        <div class="pop__content">
+            <label for="assets-selector" class="popup__close">&times;</label>
+        </div>
+        assets-selector
+    </div>
+    <input type="checkbox"  id="wallet-connect">
+    <div class="popup">
+        <div class="pop__content">
+            <label for="wallet-connect" class="popup__close">&times;</label>
+        </div>
+        wallet-connect
+    </div>
 
 </html>

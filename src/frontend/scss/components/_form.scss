@@ -1,4 +1,8 @@
 .form {
+  &__selector{
+    display: block;
+    background-color: $color-grey-light-2;
+  }
   &__title {
     font-size: $default-font-size;
     color: $color-grey-dark-3;
@@ -23,13 +27,15 @@
     font-size: $default-font-size *0.9;
     padding: 0.1rem 1rem;
   }
+  &__card-container{
+    width: 100%;
+  }
   &__container {
     display: flex;
     flex: content;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 50rem;
   }
   &__input {
     display: block;
@@ -38,9 +44,10 @@
     border-radius: 5px;
     padding: 1rem 2rem;
     background-color: $color-grey-light-2;
-    font-size: $default-font-size * 2;
+    font-size: $default-font-size * 3;
   }
   &__button {
     font-size: $default-font-size * 1.2;
+    display: block;
   }
 }

@@ -49,6 +49,11 @@ a:visited  {
   text-decoration: none;
 }
 
+input[type=checkbox]{
+  opacity: 0;
+  height: 0;
+}
+
 ::selection {
   background-color: $color-primary;
   color: $color-white;

@@ -22,10 +22,16 @@
   }
   &--primary {
     text-align: center;
-    background-color: $color-primary-dark;
+    background-color: $color-primary;
+    &:hover{
+      background-color: $color-primary-light;
+    }
   }
   &--grey {
     background-color: $color-grey-light-2;
+    &:hover{
+      background-color: $color-primary-light;
+    }
   }
   &__label {
     background-color: $color-primary-light;
@@ -34,13 +40,22 @@
     font-weight: 300;
   }
   &__icon {
+    background-color: $color-grey-light-2;
     position: relative;
     border-radius: 100%;
     width: 5rem;
     height: 5rem;
-    & > a {
+    & > a,
+    & > a:link,
+    & > a:visited {
       @include absCenter;
+      font-size: $default-font-size *2;
+      color: $color-black;
     }
+    &:hover > a {
+      color: $color-primary-dark;
+    }
+   
   }
   &__pill {
     background-color: rgba($color-primary-light, 0.5);

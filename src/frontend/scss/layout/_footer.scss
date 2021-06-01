@@ -1,5 +1,10 @@
 .footer {
-  padding: 3rem 0;
+  @media (min-width: 48rem) {
+   position: fixed;
+   bottom: 0;
+   width:100%;
+  }
+  padding: 3rem 5rem;
   background-color: $color-white;
   &__text {
     font-size: $default-font-size;
@@ -24,6 +29,9 @@
   }
   &__container{
     display: flex;
+    justify-content: space-between;
+  }
+  @media (min-width: 48rem) {
     justify-content: flex-end;
   }
   & .button{
@@ -34,5 +42,10 @@
     > .fa-globe-americas{
       font-size: $default-font-size *2;
     }
+  }
+  
+  & .dropdown__menu {
+    left: 1rem;
+    bottom: 70px;
   }
 }
