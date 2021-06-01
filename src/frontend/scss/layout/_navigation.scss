@@ -1,0 +1,19 @@
+.navigation {
+  &__list {
+    display: flex;
+  }
+  &__dropdown-toggle {
+    display: inline-block;
+    input[type="checkbox"] {
+      opacity: 0;
+      cursor: pointer;
+    }
+    & > input[type="checkbox"]:checked + .navigation__dropdown-menu {
+      height: 0%;
+    }
+    &:hover {
+      background-color: $color-grey-light-2;
+      color: $color-primary-dark;
+    }
+  }
+}
