@@ -1,3 +1,18 @@
-header{
+.header{
+    background-color: $color-white;
+    padding: 3rem 3rem;
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &__logo-box{
+        width: 16rem;
+        margin-right: 2rem;
+    }
+    &__logo{
+        width: 100%;
+    }
+    &__button{
+        width: 20rem;
+        text-align: center;
+    }
 }

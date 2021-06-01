@@ -12,21 +12,23 @@
     padding: 1rem 2rem;
     font-weight: bold;
     font-size: $default-font-size * 1.1;
+    border-radius: 5px;
   }
   
   &--text {
     color: $color-primary-light;
+    font-size: $default-font-size * 1.1;
   }
   &--primary {
     background-color: $color-primary-dark;
   }
   &--grey {
-    background-color: $color-grey-dark-2;
+    background-color: $color-grey-ligth-2;
   }
   &__label {
     background-color: $color-primary-light;
     color: $color-primary-dark;
-    border-radius: 100%;
+    border-radius: 50%;
     font-weight: 300;
   }
   &__icon {

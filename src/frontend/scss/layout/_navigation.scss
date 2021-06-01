@@ -1,19 +1,47 @@
 .navigation {
+  &__navbar {
+    display: flex;
+  }
   &__list {
     display: flex;
   }
-  &__dropdown-toggle {
+  &__item {
+    position: relative;
+  }
+  &__item:hover &__dropdown-button {
+    // background-color: $color-grey-light-2;
+    color: $color-primary-dark;
+  }
+
+  &__dropdown-button {
     display: inline-block;
     input[type="checkbox"] {
       opacity: 0;
       cursor: pointer;
     }
-    & > input[type="checkbox"]:checked + .navigation__dropdown-menu {
+  }
+  &__dropdown-toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+    height: 50px;
+    &:checked ~ .navigation__dropdown-menu {
       height: 0%;
+      opacity: 0;
     }
-    &:hover {
-      background-color: $color-grey-light-2;
-      color: $color-primary-dark;
-    }
+  }
+  &__dropdown-menu {
+    position: absolute;
+    display: flex;
+    left: 1rem;
+    top: 70px;
+    flex-direction: column;
+  }
+  &__dropdown-item > a {
+    display: block;
   }
 }

@@ -28,8 +28,8 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem;
-
+  // padding: 3rem;
+background-color: $color-grey-light-2;
   @include respond(tab-port) {
     padding: 0;
   }
@@ -41,6 +41,12 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+a,
+a:hover,
+a:active{
+  text-decoration: none;
 }
 
 ::selection {

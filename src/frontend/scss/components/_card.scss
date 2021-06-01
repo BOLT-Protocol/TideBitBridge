@@ -1,9 +1,14 @@
 .card {
-  height: 30rem;
+  height: 10rem;
+  width: 20rem;
   background-color: $color-white;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-
+  
+  &__pannel {
+    display: flex;
+    flex-direction: row;
+  }
   &__icon {
     height: 3rem;
     width: 3rem;
