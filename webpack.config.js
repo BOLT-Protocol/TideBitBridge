@@ -1,10 +1,7 @@
 const webpack = require("webpack");
 const fs = require("fs");
 const path = require("path");
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== "production";
 
 function getExternals() {
   const nodeModules = fs.readdirSync(path.join(process.cwd(), "node_modules"));
@@ -16,11 +13,11 @@ function getExternals() {
 
 const frontend = {
   mode: "none",
-  entry: path.resolve(__dirname, "src/frontend/main.js"),
+  entry: path.resolve(__dirname, "src/frontend/javascript/main.js"),
   output: {
-    path: path.resolve(__dirname, "build/frontend"),
-    filename: "main.js",
-    chunkFilename: "[id].js",
+    path: path.resolve(__dirname, "build/frontend/assets"),
+    filename: "javascript/main.js",
+    chunkFilename: "javascript/[id].js",
   },
   module: {
     rules: [
@@ -33,14 +30,26 @@ const frontend = {
           "postcss-loader",
         ],
       },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "image/[name].[ext]", // 修改生成路徑
+              publicPath: '../', // 修改公共路徑
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: "css/[name].css",
+      chunkFilename: "css/[id].css",
     }),
   ],
 };
