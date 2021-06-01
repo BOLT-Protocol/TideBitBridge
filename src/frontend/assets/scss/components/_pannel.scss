@@ -1,0 +1,15 @@
+.pannel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $color-white;
+  border-radius: 10px;
+
+  &--main{
+      padding: 5rem 10rem;
+  }
+  &--sub{
+      padding: 3rem 6rem;
+  }
+}

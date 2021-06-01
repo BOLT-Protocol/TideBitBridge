@@ -1,0 +1,28 @@
+.listtile {
+  display: flex;
+  padding: 2rem 2rem;
+  &__leading {
+    width: 5rem;
+  }
+  &__title-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title-box > .title {
+    font-size: $default-font-size * 1.1;
+    font-weight: bold;
+  }
+  &__title-box > .subtitle {
+    font-size: $default-font-size * 1;
+    font-weight: bold;
+  }
+
+  &__suffix {
+    width: 3rem;
+    color: transparent;
+  }
+  &__suffix.selected {
+    color: $color-primary-dark;
+  }
+}

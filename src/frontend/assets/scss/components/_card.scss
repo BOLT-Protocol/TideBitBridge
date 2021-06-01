@@ -1,0 +1,18 @@
+.card {
+  height: 30rem;
+  background-color: $color-white;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+  }
+  &__title {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  &__button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-black;
+}
+
+.heading {
+  &__primary {
+    font-size: $default-font-size * 1.5;
+  }
+}
+
+.title {
+  font-size: $default-font-size * 1.1;
+  color: $color-grey-dark-3;
+}
+
+.description {
+  font-size: $default-font-size * 1.1;
+}
+
+.hint-text {
+  font-size: $default-font-size * 0.95;
+  color: $ccolor-grey-dark-2;
+  &--light{
+      color: $color-grey-light-2;
+  }
+}

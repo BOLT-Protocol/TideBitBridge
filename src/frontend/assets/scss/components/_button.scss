@@ -1,0 +1,45 @@
+.button {
+  border-radius: 5px;
+  cursor: pointer;
+  &__inline {
+    display: inline;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: $default-font-size;
+  }
+  &__block {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: $default-font-size * 1.1;
+  }
+  
+  &--text {
+    color: $color-primary-light;
+  }
+  &--primary {
+    background-color: $color-primary-dark;
+  }
+  &--grey {
+    background-color: $color-grey-dark-2;
+  }
+  &__label {
+    background-color: $color-primary-light;
+    color: $color-primary-dark;
+    border-radius: 100%;
+    font-weight: 300;
+  }
+  &__icon {
+    border-radius: 100%;
+  }
+  &__toggle {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 3px;
+  }
+  &__switch {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 3px;
+  }
+}
