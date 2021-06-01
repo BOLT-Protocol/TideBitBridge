@@ -1,0 +1,20 @@
+.size-box{
+    display: block;
+    &__width--small{
+        width: 2rem;
+    }
+    &__height--small{
+        height: 2rem;
+    }
+
+    &__height--medium{
+        height: 4rem;
+    }
+
+}
+.margin__left--small{
+    margin-left: 1rem;
+}
+.margin__right--small{
+    margin-right: 1rem;
+}

@@ -4,26 +4,28 @@
   &__inline {
     display: inline;
     padding: 0.5rem 1rem;
-    font-weight: bold;
+    font-weight: 400;
     font-size: $default-font-size;
+    color: $color-black;
   }
   &__block {
     width: 100%;
-    padding: 1rem 2rem;
-    font-weight: bold;
+    padding: 0.5rem 2rem;
+    font-weight: 400;
     font-size: $default-font-size * 1.1;
-    border-radius: 5px;
   }
-  
+
   &--text {
     color: $color-primary-light;
     font-size: $default-font-size * 1.1;
+    padding: 0rem 1rem;
   }
   &--primary {
+    text-align: center;
     background-color: $color-primary-dark;
   }
   &--grey {
-    background-color: $color-grey-ligth-2;
+    background-color: $color-grey-light-2;
   }
   &__label {
     background-color: $color-primary-light;
@@ -32,16 +34,24 @@
     font-weight: 300;
   }
   &__icon {
+    position: relative;
     border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    & > a {
+      @include absCenter;
+    }
   }
-  &__toggle {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 3px;
-  }
-  &__switch {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 3px;
+  &__pill {
+    background-color: rgba($color-primary-light, 0.5);
+    color: $color-primary-dark;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    border-radius: 32px;
+    font-size: $default-font-size * 1.1;
+    > a:link, >:visited{
+      color: $color-primary-dark;
+    }
+   
   }
 }

@@ -1,8 +1,8 @@
 .header{
     background-color: $color-white;
-    padding: 3rem 3rem;
+    padding: 2rem 3rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     &__logo-box{
         width: 16rem;
@@ -14,5 +14,8 @@
     &__button{
         width: 20rem;
         text-align: center;
+         a:link, :visited{
+            color: $color-black;
+          }
     }
 }

@@ -11,7 +11,8 @@
     <!-- development -->
     <link rel="stylesheet" href="../../src/frontend/scss/main.css" />
     <link rel="shortcut icon" type="image/png" href="https://www.tidebit.one/favicon.ico" />
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>TideBit Smart Chain | TideBit Bridge</title>
 </head>
 
@@ -25,11 +26,11 @@
             </div>
             <ui class="navigation__list">
                 <ui class="navigation__item">
-                    <li class="button__block button--primary "><a href="#">Bridge</a></li>
+                    <li class="button__pill "><a href="#">TideBit Bridge</a></li>
                 </ui>
                 <li class="navigation__item">
-                    <div class="navigation__dropdown-button button__block" id="exchange"><span
-                            class="text">Exchange</span><i class="fas fa-caret-down"></i></div>
+                    <div class="navigation__dropdown-button button button__block" id="exchange"><span
+                            class="text margin__right--small">Exchange</span><i class="fas fa-caret-down"></i></div>
                     <input type="checkbox" class="navigation__dropdown-toggle" checked>
                     <ul class="navigation__dropdown-menu">
                         <li class="navigation__dropdown-item"><a href="#">1</a></li>
@@ -38,8 +39,8 @@
                     </ul>
                 </li>
                 <li class="navigation__item">
-                    <div class="navigation__dropdown-button button__block" id="wallet"><span
-                            class="text">Wallet</span><i class="fas fa-caret-down"></i></div>
+                    <div class="navigation__dropdown-button button button__block" id="wallet"><span
+                            class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i></div>
                     <input type="checkbox" class="navigation__dropdown-toggle" checked>
                     <ul class="navigation__dropdown-menu">
                         <li class="navigation__dropdown-item"><a href="#">1</a></li>
@@ -48,8 +49,8 @@
                     </ul>
                 </li>
                 <li class="navigation__item">
-                    <div class="navigation__dropdown-button button__block" id="explorer"><span
-                            class="text">Explorer</span><i class="fas fa-caret-down"></i></div>
+                    <div class="navigation__dropdown-button button button__block" id="explorer"><span
+                            class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i></div>
                     <input type="checkbox" class="navigation__dropdown-toggle" checked>
                     <ul class="navigation__dropdown-menu">
                         <li class="navigation__dropdown-item"><a href="#">1</a></li>
@@ -60,32 +61,109 @@
             </ui>
         </nav>
         <div class="header__button">
-            <li class="button__block button--primary "><a href="#">Connect</a></li>
+            <li class="button button__block button--primary "><a href="#">Connect Wallet</a></li>
         </div>
     </header>
+    <div class="size-box size-box__height--medium"></div>
     <main>
         <section class="section">
-            <div class="pannel pannel--main">
-                <div class="title">Assets</div>
-                <div class="button__block button--grey"><span>ETH</span></div>
-                <div class="card__pannel">
-                    <div class="card">
-                        <div class="title">ETH</div>
+            <div class="pannel pannel--main form">
+                <div class="form__title">Assets</div>
+                <div class="button button__block button--grey"><span>ETH</span></div>
+                <div class="size-box size-box__height--small"></div>
+                <div class="form__container">
+                    <div class="card__container">
+                        <div class="form__title">From</div>
+                        <div class="card">
+                            <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH"></div>
+                            <div class="card__box">
+                                <div class="card__leading">Ethereum Network</div>
+                                <div class="card__button button--grey">
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <div class="title">TBC</div>
+                    <div class="card__switch button--grey">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="card__container">
+                        <div class="form__title">To</div>
+                        <div class="card">
+                            <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH"></div>
+                            <div class="card__box">
+                                <div class="card__leading">TideBit Network</div>
+                                <div class="card__button button--grey">
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="size-box size-box__height--small"></div>
+                <div class="form__hint-text">If you have not add TideBit Smart Chain network in your MetaMask yet,
+                    please
+                    click <span class="button button__inline button--primary">Add network</span> and continue</div>
+                <div class="size-box size-box__height--medium"></div>
+                <div class="form__title">Amount</div>
+                <input type="number" class="form__input" id="amount">
+                <div class="size-box size-box__height--small"></div>
+                <div class="form__hint-text form__hint-text--dark">You will receive
+                    ≈ <span class="form__hint-text-icon margin__right--small"><img
+                            src="https://www.tidebit.one/icons/eth.png" alt="coin_icon"></span><span
+                        class="form__hint-text--amount">0 ETH</span><span class="button__pill margin__left--small">BEP
+                        20</span></div>
+                <div class="size-box size-box__height--medium"></div>
+
+                <div class="button button__block button--primary form__button"><span>Connect Wallet</span></div>
             </div>
             <div class="pannel pannel--sub">
                 <div class="heading__primary">TideBit Bridge</div>
-                <div class="description">The safe, fast and most secure way to bring cross-chain assets to TideBit chains.</div>
-                <div class="button__block button--grey"><span>Introduction</span></div>
-                <div class="button__block button--text">View Proof Assets</div>
-                <div class="button__block button--text">User Guide</div>
+                <div class="description">The safe, fast and most secure way to bring cross-chain assets to TideBit
+                    chains.</div>
+                <div class="size-box size-box__height--small"></div>
+                <div class="button button button__block button--grey"><i
+                        class="fas fa-video margin__right--small"></i><span>Introduction Video</span></div>
+                <div class="size-box size-box__height--small"></div>
+                <div class="button button__block button--text">View Proof Assets</div>
+                <div class="size-box size-box__height--small"></div>
+                <div class="button button__block button--text">User Guide</div>
             </div>
         </section>
     </main>
-
+    <div class="size-box size-box__height--medium"></div>
+    <footer class="footer">
+        <div class='row'>
+            <div class='col-1-of-2'>
+                <div class="footer__button">
+                    <a href="#"> Term of use</a>
+                </div>
+                <div class="footer__text">
+                    © 2019 - 2020, TideBit All rights reserved.
+                </div>
+            </div>
+            <div class='col-1-of-2'>
+                <div class="footer__container">
+                    <div class="footer__social-media">
+                        <div class="button__icon button--grey">
+                            <a href="https://t.me/tidebitofficial" target="_blank"><img
+                                    src="https://www.tidebit.one/telegram_footer_logo.svg"></a>
+                        </div>
+                        <div class="button__icon button--grey">
+                            <a href="https://www.facebook.com/tidebit" target="_blank"><img
+                                    src="https://www.tidebit.one/facebook_footer_logo.svg"></a>
+                        </div>
+                        <div class="button__icon button--grey">
+                            <a href="https://www.facebook.com/tidebit" target="_blank"><img
+                                    src="https://www.tidebit.one/linkedin_footer_logo.svg"></a>
+                        </div>
+                    </div>
+                    <div class="button  button__inline button--grey"><i
+                            class="fas fa-globe-americas margin__right--small"></i><span
+                            class="margin__right--small">English</span><i class="fas fa-caret-down margin__left--small"></i></div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </html>

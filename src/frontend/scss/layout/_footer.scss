@@ -1,0 +1,38 @@
+.footer {
+  padding: 3rem 0;
+  background-color: $color-white;
+  &__text {
+    font-size: $default-font-size;
+  }
+  &__button {
+    > a:link,
+    > a:visited {
+      color: $color-black;
+      font-size: $default-font-size * 1.2;
+    }
+    > a:hover,
+    > a:active {
+      color: $color-primary-light;
+    }
+  }
+  &__social-media {
+    display: flex;
+    align-items: flex-end;
+    > div {
+      margin-right: 2rem;
+    }
+  }
+  &__container{
+    display: flex;
+    justify-content: flex-end;
+  }
+  & .button{
+    display: flex;
+    align-items: center;
+
+    padding: 1rem 2rem;
+    > .fa-globe-americas{
+      font-size: $default-font-size *2;
+    }
+  }
+}

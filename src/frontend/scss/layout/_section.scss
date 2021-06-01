@@ -1,6 +1,14 @@
 .section {
-  margin: 10rem 20rem;
   display: flex;
-  flex-direction: row-reverse;
-//   justify-content: space-between;
+  padding: 0rem 3rem;
+  flex-direction: column;
+  height: 100%;
+  margin: 0px auto;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (min-width: 48rem) {
+    flex-direction: row-reverse;
+    margin: 0px auto;
+  }
 }
