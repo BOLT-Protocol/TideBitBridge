@@ -1,10 +1,10 @@
 const webpack = require("webpack");
 const fs = require("fs");
 const path = require("path");
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
+// const autoprefixer = require("autoprefixer");
+// const cssnano = require("cssnano");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== "production";
+// const devMode = process.env.NODE_ENV !== "production";
 
 function getExternals() {
   const nodeModules = fs.readdirSync(path.join(process.cwd(), "node_modules"));
@@ -21,15 +21,6 @@ const frontend = {
     path: path.resolve(__dirname, "build/frontend"),
     filename: "main.js",
     chunkFilename: "[id].js",
-    // Where the CSS is saved to
-    publicPath: "/css",
-  },
-  resolve: {
-    extensions: [".css", ".scss"],
-    alias: {
-      // Provides ability to include node_modules with ~
-      "~": path.resolve(process.cwd(), "src", "scss"),
-    },
   },
   module: {
     rules: [
@@ -38,15 +29,14 @@ const frontend = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: { plugins: [autoprefixer(), cssnano()] },
-              publicPath: '../',
-            },
-          },
           "sass-loader",
-          
+          // {
+          //   loader: "postcss-loader",
+          //   options: {
+          //     postcssOptions: { plugins: [autoprefixer(), cssnano()] },
+          //     publicPath: "/css",
+          //   },
+          // },
         ],
       },
     ],
@@ -54,12 +44,10 @@ const frontend = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new MiniCssExtractPlugin({
-      filename: devMode ? "[name].css" : "[name].[contenthash].css",
-      chunkFilename: devMode ? "[id].css" : "[id].[contenthash].css",
+    new webpack.MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
-    // only enable hot in development
-    devMode ? new webpack.HotModuleReplacementPlugin() : {},
   ],
 };
 

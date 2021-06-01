@@ -29,6 +29,7 @@
   "description": "Cross Chain Channel for Transfering Crypto Assets to TideBit Chain",
   "devDependencies": {
     "@babel/core": "^7.3.3",
+    "autoprefixer": "^10.2.6",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "css-loader": "^2.1.1",
@@ -59,7 +60,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --open 'google chrome'",
-    "start": "bin/main.js"
+    "start": "bin/main.js",
+    "test": "webpack"
   },
   "version": "0.1.0"
 }
