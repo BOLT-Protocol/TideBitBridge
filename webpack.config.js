@@ -1,10 +1,10 @@
 const webpack = require("webpack");
 const fs = require("fs");
 const path = require("path");
-// const autoprefixer = require("autoprefixer");
-// const cssnano = require("cssnano");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const devMode = process.env.NODE_ENV !== "production";
+const devMode = process.env.NODE_ENV !== "production";
 
 function getExternals() {
   const nodeModules = fs.readdirSync(path.join(process.cwd(), "node_modules"));
@@ -30,13 +30,7 @@ const frontend = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader",
-          // {
-          //   loader: "postcss-loader",
-          //   options: {
-          //     postcssOptions: { plugins: [autoprefixer(), cssnano()] },
-          //     publicPath: "/css",
-          //   },
-          // },
+          "postcss-loader",
         ],
       },
     ],
@@ -44,7 +38,7 @@ const frontend = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.MiniCssExtractPlugin({
+    new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),

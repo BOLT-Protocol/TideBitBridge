@@ -1,1 +1,1 @@
-console.log('webpack entry point');
+import "./assets/scss/main.scss";
