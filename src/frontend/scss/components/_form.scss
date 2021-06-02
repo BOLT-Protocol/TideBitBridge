@@ -13,21 +13,21 @@
     font-size: $default-font-size;
     color: $color-grey-dark-3;
   }
-  #login-status:checked + & &__hint-text {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
+
   &__hint-text {
-    visibility: visible;
-    width: 100%;
-    height: 100%;
     align-items: center;
-    font-size: $default-font-size * 0.95;
+    font-size: $default-font-size * 0.9;
     color: $color-grey-dark-2;
+    font-weight: 400;
+
     &--dark {
       color: $color-grey-dark-3;
     }
+  }
+  &__leading {
+    font-size: $default-font-size * 0.95;
+    font-weight: 400;
+    line-height: 1.2;
   }
   &__hint-text-icon {
     width: 2rem;
@@ -54,44 +54,27 @@
   &__input {
     display: block;
     width: 100%;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 5px;
     padding: 1rem 2rem;
     background-color: $color-grey-light-2;
     font-size: $default-font-size * 3;
   }
+  &__input:focus{
+    border: 1px solid $color-primary-light;
+    outline: none;
+  }
   &__button {
     font-size: $default-font-size * 1.2;
     display: block;
   }
-  #login-status + & &__available-amount-box {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  #login-status:checked + & &__available-amount-box {
-    visibility: visible;
-    width: 100%;
-    height: 100%;
-  }
-  #login-status + & &__add-assets {
-    // opacity: 0;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  #login-status:checked + & &__add-assets {
-    visibility: visible;
-    width: 100%;
-    height: 100%;
+  &__add-assets {
     text-align: right;
-    font-size: $default-font-size * 0.9;
-    font-weight: 400;
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
-  #login-status:checked + & &__icon-button {
+  &__icon-button {
     border-radius: 5px;
     i {
       padding: 1rem 1rem;
@@ -99,17 +82,78 @@
       font-weight: 400;
     }
   }
-  #login-status + & &__available-option-box {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  #login-status:checked + & &__available-option-box {
-    visibility: visible;
-    width: 100%;
-    height: 100%;
+  &__available-option-box {
     border: 1px solid $color-grey-dark-2;
-    padding:  2rem;
+    padding: 2rem 2rem 1rem 2rem;
     border-radius: 1rem;
+    margin-top: 0.5rem;
+  }
+  &__swap-gas-hint {
+    margin: 1rem 0;
+  }
+  & #swap-gas {
+    @include absCenter;
+  }
+  &__checkbox {
+    & > i {
+      font-weight: 400;
+      font-size: $default-font-size * 0.75;
+      padding: 3px;
+      border-radius: 3px;
+      border: 1px solid $color-grey-light-2;
+      background-color: $color-grey-light-1;
+    }
+  }
+  &__available-checkbox {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  &__to {
+    padding: 1rem 2rem;
+    background-color: $color-grey-light-2;
+    border-radius: 5px;
+    font-size: $default-font-size *1;
+    display: flex;
+    
+  }
+  &__to-icon {
+    display: flex;
+    width: 2rem;
+    margin-right: 1rem;
+    & img{
+      width: 100%;
+    }
+  }
+  &__outline-box{  
+    display: flex;
+    border: 1px solid $color-primary-light;
+    align-items: flex-start;
+    background-color: rgba($color-primary-dark, 0.3);
+  }
+  &__outline-box-icon{
+    color: $color-primary-dark;
+    font-size: $default-font-size * 1.2;
+    margin-right: 1rem;
+  }
+  #swap-gas:checked + &__available-option-box > &__available-checkbox i {
+    border: 1px solid $color-primary-dark;
+    background-color: $color-primary-dark;
+  }
+  #swap-gas:checked + &__available-option-box &__swap-gas,
+  #swap-gas:checked ~ &__swap-gas-hint--light,
+  #login-status:checked + & &__add-assets,
+  #login-status + & label[for="wallet-connect"],
+  #login-status:checked + & &__available {
+    @include appear;
+  }
+
+  #swap-gas + &__available-option-box &__swap-gas,
+  #swap-gas ~ &__swap-gas-hint--light,
+  #login-status + & &__available,
+  #login-status + & &__add-assets,
+  #login-status:checked + & label[for="wallet-connect"],
+  #login-status:checked + & &__estimate {
+    @include disappear;
   }
 }

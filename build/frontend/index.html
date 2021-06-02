@@ -196,12 +196,12 @@
     <main class="margin__top--medium margin__bottom--medium">
         <section class="section">
             <div class="pannel pannel--main">
-                <input type="checkbox" name="loginstate" id="login-status">
+                <input type="checkbox" name="loginstate" id="login-status" checked>
                 <label for="login-status" class="form">
                     <div class="form__title">Assets</div>
                     <label for="assets-selector" class="form__selector button button__block"><span>ETH</span><i
                             class="fas fa-chevron-right"></i></label for="assets-selector">
-                    <div class="form__add-assets margin__top--small">
+                    <div class="form__hint-text form__hint-text--dark form__add-assets margin__top--small">
                         <div class="margin__right--small">Add <span id="add-asset">ETH</span> to MetaMask</div>
                         <div class="form__icon-button button--grey">
                             <i class="fas fa-plus"></i>
@@ -240,7 +240,8 @@
                         </div>
                     </div>
                     <div class="size-box size-box__height--small"></div>
-                    <div class="form__hint-text">If you have not add TideBit Smart Chain network in your
+                    <div class="form__hint-text form__add-network">If you have not add TideBit Smart Chain network in
+                        your
                         MetaMask
                         yet,
                         please
@@ -250,26 +251,31 @@
                     <div class="size-box size-box__height--medium"></div>
                     <div class="form__title">Amount</div>
                     <input type="number" class="form__input" id="amount">
-                    <div class="size-box size-box__height--small"></div>
-                    <div class="form__hint-text form__hint-text--dark">You will receive
+                    <div class="form__hint-text form__hint-text--dark form__estimate margin__top--small">You will
+                        receive
                         ≈ <span class="form__hint-text-icon margin__right--small"><img
                                 src="https://www.tidebit.one/icons/eth.png" alt="coin_icon"></span><span
                             class="form__hint-text--amount">0 ETH</span><span
                             class="button__pill margin__left--small">BEP
                             20</span></div>
                     <div class="form__available">
-                        <div class="form__available-amount-box">Available <span class="form__available-amount">0
+                        <div class="form__available-amount-box form__hint-text">Available: <span
+                                class="form__available-amount">0
                                 ETH</span></div>
-                        <div class="form__available-option-box">
+                        <input type="checkbox" name="swap-gas" id="swap-gas">
+                        <div class="form__available-option-box form__hint-text--dark">
                             <div class="form__available-checkbox">
-                                <input type="checkbox" name="swap-gas" id="swap-gas">
-                                <span>I want to swap some TBC gas in this order</span>
+                                <label for="swap-gas" class="form__checkbox margin__right--small">
+                                    <i class="fas fa-check"></i>
+                                </label>
+                                <span class="form__leading">I want to swap some TBC gas in this order</span>
                             </div>
                             <div class="form__swap-gas">
                                 <div class="form__swap-gas-hint">Please select the amount of swapping TBC</div>
                                 <div class="radio__toolbar">
                                     <div class="radio__button-container">
-                                        <input class="radio" type="radio" name="swap-gas-amount" id="swap-gas-slow">
+                                        <input class="radio" type="radio" name="swap-gas-amount" id="swap-gas-slow"
+                                            checked>
                                         <label for="swap-gas-slow" class="radio__button">
                                             <div class="radio__text">0.5</div>
                                             <div class="radio__text">TBC</div>
@@ -292,10 +298,39 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form__swap-gas-hint--light form__hint-text">The final price will depend on the
+                            market
+                            condition at the time of execution.</div>
+                        <div class="form__title margin__top--medium">Destination</div>
+                        <div class="form__to">
+                            <span class="form__to-icon">
+                                <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="metamask">
+                            </span>
+                            <span class="form__to-address">0x88e3bB...29480dad</span>
+                        </div>
+                        <div class="form__hint-text">This is the destination address of the To network</div>
+                        <div class="form__outline-box margin__top--medium button button button__block">
+                            <div class="form__outline-box-icon"><i class="fas fa-info-circle"></i></div>
+                            <div class="form__hint-text">Your swap address will be your receiving address, please
+                                switch the network to check your balance after completion.</div>
+                        </div>
+                        <div class="button button__block button--primary form__button  margin__top--medium">Next</div>
+                        <div class="form__outline-box margin__top--medium button button__block">
+                            <div class="form__outline-box-icon"><i class="fas fa-info-circle"></i></div>
+                            <div class="form__outline-box-title">
+                                <div class="form__title">Reminder</div>
+                                <div class="form__hint-text form__amount-minimum">1. The minimum amount is 110 ETH</div>
+                                <div class="form__hint-text form__amount-maximumn">2. The maximum amount is 10000 USDT
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="size-box size-box__height--medium"></div>
-                    <label for="wallet-connect" class="button button__block button--primary form__button">Connect
-                        Wallet</label>
+                    <label for="wallet-connect" class="form__button">
+                        <div class="size-box size-box__height--medium"></div>
+                        <div class="button button__block button--primary ">Connect
+                            Wallet
+                        </div>
+                    </label>
                 </label>
             </div>
             <div class="pannel pannel--sub">
@@ -355,4 +390,5 @@
             </div>
         </div>
     </footer>
+
 </html>
