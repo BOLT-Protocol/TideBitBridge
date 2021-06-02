@@ -1,6 +1,8 @@
-.listtile {
+
+.icontile {
   display: flex;
   padding: 2rem 2rem;
+  background-color: $color-white;
   &__leading {
     width: 5rem;
   }

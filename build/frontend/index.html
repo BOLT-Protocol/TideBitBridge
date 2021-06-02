@@ -177,14 +177,45 @@
         </div>
         </div>
     </footer>
-    <input type="checkbox" id="assets-selector">
+    <input type="checkbox" id="assets-selector" checked>
     <div class="popup">
         <div class="popup__content">
-            <label for="assets-selector" class="popup__close">&times;</label>
-            assets-selector
+            <div class="popup__header">
+                <div class="scrollview__searchbar">
+                    <span class="scrollview__searchbar-icon"><i class="fas fa-search"></i></span>
+                    <input type="text" name="asset" id="selected-assets" class="scrollview__searchbar-input">
+                </div>
+                <label for="assets-selector" class="popup__close button--grey"><i class="fas fa-times"></i></label>
+            </div>
+            <div class="size-box size-box__height--medium"></div>
+            <div class="scrollview">
+                <ul class="scrollview__list">
+                    <li class="scrollview__item">
+                        <div class="icontile">
+                            <div class="icontile__leading">
+                                <img src="https://www.tidebit.one/icons/btc.png" alt="BTC" class="icontile__icon">
+                            </div>
+                            <div class="icontile__title-box">
+                                <div class="icontile__title--main">BTC</div>
+                                <div class="icontile__title--sub">Bitcoin</div>
+                            </div>
+                            <div class="icontile__suffix"><i class="fas fa-check"></i></div>
+                        </div>
+                    </li>
+                    <li class="scrollview__item">Two</li>
+                    <li class="scrollview__item">Three</li>
+                    <li class="scrollview__item">Four</li>
+                    <li class="scrollview__item">Five</li>
+                    <li class="scrollview__item">Six</li>
+                    <li class="scrollview__item">Seven</li>
+                    <li class="scrollview__item">Eight</li>
+                    <li class="scrollview__item">Nine</li>
+                    <li class="scrollview__item">Ten</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <input type="checkbox" id="wallet-connect" checked>
+    <input type="checkbox" id="wallet-connect">
     <div class="popup">
         <div class="popup__content">
             <div class="popup__header">
@@ -193,7 +224,7 @@
             </div>
             <div class="radio__toolbar">
                 <div class="radio__button-container">
-                    <input type="radio" name="metamask" id="connect-metamask">
+                    <input class="radio" type="radio" name="connectwallet" id="connect-metamask">
                     <label class="radio__button" for="connect-metamask">
                         <span class="radio__text">MetaMask</span>
                         <img class="radio__icon" src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg"
@@ -201,7 +232,7 @@
                     </label>
                 </div>
                 <div class="radio__button-container">
-                    <input type="radio" name="tidebit" id="connect-tidebit">
+                    <input class="radio" type="radio" name="connectwallet" id="connect-tidebit">
                     <label class="radio__button" for="connect-tidebit">
                         <span class="radio__text">TideBitChain</span>
                         <span class="radio__icon"></span>
@@ -209,7 +240,7 @@
                 </div>
                 <div class="radio__button-container disable">
                     </label>
-                    <input type="radio" name="walletconnect" id="connect-walletconnect">
+                    <input class="radio" type="radio" name="connectwallet" id="connect-walletconnect" disabled>
                     <label class="radio__button " for="connect-walletconnect">
                         <span class="radio__text">
                             <span>WalletConnect</span>
