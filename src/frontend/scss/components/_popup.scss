@@ -29,7 +29,7 @@
     justify-content: flex-start;
     align-items: stretch;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
-    border-radius: 1em;
+    border-radius: 2rem;
     background-color: $color-grey-light-2;
     overflow: hidden;
     opacity: 0;
@@ -43,6 +43,10 @@
       max-height: #{"min(50rem, 75vh)"};
       max-width: 55rem;
     }
+  }
+  #assets-selector + &  &__header {
+   border: none;
+   border-radius: 2rem;
   }
 
   //Open states
@@ -89,8 +93,8 @@
   &__button {
     margin: 2rem;
   }
-  &  .button__pill{
-    font-size: $default-font-size *0.85;
+  & .button__pill {
+    font-size: $default-font-size * 0.85;
     padding: 0.1rem 1rem;
     display: inline;
   }
