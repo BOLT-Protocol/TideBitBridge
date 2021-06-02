@@ -27,12 +27,19 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   // padding: 3rem;
   background-color: $color-grey-light-2;
   @include respond(tab-port) {
     padding: 0;
   }
+}
+
+footer {
+  margin-top: auto;
 }
 
 ul {
@@ -45,12 +52,12 @@ li {
 
 a,
 a:hover,
-a:visited  {
+a:visited {
   text-decoration: none;
 }
 
-input[type=checkbox]{
-  opacity: 0;
+input[type="checkbox"] {
+  @include disappear;
 }
 
 ::selection {

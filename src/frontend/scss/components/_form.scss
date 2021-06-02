@@ -105,7 +105,11 @@
     height: 0;
   }
   #login-status:checked + & &__available-option-box {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
     border: 1px solid $color-grey-dark-2;
-    padding: 0 2rem;
+    padding:  2rem;
+    border-radius: 1rem;
   }
 }
