@@ -67,56 +67,103 @@
     <div class="size-box size-box__height--medium"></div>
     <main>
         <section class="section">
-            <div class="pannel pannel--main form">
-                <div class="form__title">Assets</div>
-                <label for="assets-selector" class="form__selector button button__block"><span>ETH</span></label
-                    for="assets-selector">
-                <div class="size-box size-box__height--small"></div>
-                <div class="form__container">
-                    <div class="form__card-container">
-                        <div class="form__title">From</div>
-                        <div class="card">
-                            <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH"></div>
-                            <div class="card__box">
-                                <div class="card__leading">Ethereum Network</div>
-                                <div class="card__button button--grey">
-                                    <i class="fas fa-caret-down"></i>
+            <div class="pannel pannel--main">
+                <input type="checkbox" name="loginstate" id="login-status" >
+                <label for="login-status" class="form">
+                    <div class="form__title">Assets</div>
+                    <label for="assets-selector" class="form__selector button button__block"><span>ETH</span><i
+                            class="fas fa-chevron-right"></i></label for="assets-selector">
+                    <div class="form__add-assets margin__top--small">
+                        <div class="margin__right--small">Add <span id="add-asset">ETH</span> to MetaMask</div>
+                        <div class="form__icon-button button--grey">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="size-box size-box__height--small"></div>
+                    <div class="form__container">
+                        <div class="form__card-container">
+                            <div class="form__title">From</div>
+                            <div class="card">
+                                <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH">
+                                </div>
+                                <div class="card__box">
+                                    <div class="card__leading">Ethereum Network</div>
+                                    <div class="card__button button--grey">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__switch button--grey">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="form__card-container">
+                            <div class="form__title">To</div>
+                            <div class="card">
+                                <div class="card__icon"><img src="https://www.tidebit.one/favicon.ico" alt="ETH"></div>
+                                <div class="card__box">
+                                    <div class="card__leading">TideBit Network</div>
+                                    <div class="card__button button--grey">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card__switch button--grey">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="form__card-container">
-                        <div class="form__title">To</div>
-                        <div class="card">
-                            <div class="card__icon"><img src="https://www.tidebit.one/favicon.ico" alt="ETH"></div>
-                            <div class="card__box">
-                                <div class="card__leading">TideBit Network</div>
-                                <div class="card__button button--grey">
-                                    <i class="fas fa-caret-down"></i>
+                    <div class="size-box size-box__height--small"></div>
+                    <div class="form__hint-text">If you have not add TideBit Smart Chain network in your MetaMask yet,
+                        please
+                        click <span class="button button__inline button--primary">Add network</span> and continue</div>
+                    <div class="size-box size-box__height--medium"></div>
+                    <div class="form__title">Amount</div>
+                    <input type="number" class="form__input" id="amount">
+                    <div class="size-box size-box__height--small"></div>
+                    <div class="form__hint-text form__hint-text--dark">You will receive
+                        ≈ <span class="form__hint-text-icon margin__right--small"><img
+                                src="https://www.tidebit.one/icons/eth.png" alt="coin_icon"></span><span
+                            class="form__hint-text--amount">0 ETH</span><span
+                            class="button__pill margin__left--small">BEP
+                            20</span></div>
+                    <div class="form__available">
+                        <div class="form__available-amount-box">Available <span class="form__available-amount">0
+                                ETH</span></div>
+                        <div class="form__available-option-box">
+                            <div class="form__available-checkbox">
+                                <input type="checkbox" name="swap-gas" id="swap-gas">
+                                <span>I want to swap some TBC gas in this order</span>
+                            </div>
+                            <div class="form__swap-gas">
+                                <div class="form__swap-gas-hint">Please select the amount of swapping TBC</div>
+                                <div class="radio__toolbar">
+                                    <div class="radio__button-container">
+                                        <input class="radio" type="radio" name="swap-gas-amount" id="swap-gas-slow">
+                                        <label for="swap-gas-slow" class="radio__button">
+                                            <div class="radio__text">0.5</div>
+                                            <div class="radio__text">TBC</div>
+                                        </label>
+                                    </div>
+                                    <div class="radio__button-container">
+                                        <input class="radio" type="radio" name="swap-gas-amount" id="swap-gas-standand">
+                                        <label for="swap-gas-standand" class="radio__button">
+                                            <div class="radio__text">1</div>
+                                            <div class="radio__text">TBC</div>
+                                        </label>
+                                    </div>
+                                    <div class="radio__button-container">
+                                        <input class="radio" type="radio" name="swap-gas-amount" id="swap-gas-fast">
+                                        <label for="swap-gas-fast" class="radio__button">
+                                            <div class="radio__text">2</div>
+                                            <div class="radio__text">TBC</div>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="size-box size-box__height--small"></div>
-                <div class="form__hint-text">If you have not add TideBit Smart Chain network in your MetaMask yet,
-                    please
-                    click <span class="button button__inline button--primary">Add network</span> and continue</div>
-                <div class="size-box size-box__height--medium"></div>
-                <div class="form__title">Amount</div>
-                <input type="number" class="form__input" id="amount">
-                <div class="size-box size-box__height--small"></div>
-                <div class="form__hint-text form__hint-text--dark">You will receive
-                    ≈ <span class="form__hint-text-icon margin__right--small"><img
-                            src="https://www.tidebit.one/icons/eth.png" alt="coin_icon"></span><span
-                        class="form__hint-text--amount">0 ETH</span><span class="button__pill margin__left--small">BEP
-                        20</span></div>
-                <div class="size-box size-box__height--medium"></div>
-                <label for="wallet-connect" class="button button__block button--primary form__button">Connect
-                    Wallet</label>
+                    <div class="size-box size-box__height--medium"></div>
+                    <label for="wallet-connect" class="button button__block button--primary form__button">Connect
+                        Wallet</label>
+                </label>
             </div>
             <div class="pannel pannel--sub">
                 <div class="heading__primary">TideBit Bridge</div>
@@ -177,7 +224,7 @@
         </div>
         </div>
     </footer>
-    <input type="checkbox" id="assets-selector" checked>
+    <input type="checkbox" id="assets-selector">
     <div class="popup">
         <div class="popup__content">
             <div class="popup__header">
