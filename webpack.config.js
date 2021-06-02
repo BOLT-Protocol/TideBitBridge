@@ -40,13 +40,14 @@ const frontend = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: "file-loader",
             options: {
               name: "image/[name].[ext]", // 修改生成路徑
-              publicPath: "../", // 修改公共路徑
+              esModule: false,
+              publicPath: "../",
             },
           },
         ],

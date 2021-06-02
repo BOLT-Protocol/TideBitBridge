@@ -69,7 +69,8 @@
         <section class="section">
             <div class="pannel pannel--main form">
                 <div class="form__title">Assets</div>
-                <label for="assets-selector" class="form__selector button button__block"><span>ETH</span></label for="assets-selector">
+                <label for="assets-selector" class="form__selector button button__block"><span>ETH</span></label
+                    for="assets-selector">
                 <div class="size-box size-box__height--small"></div>
                 <div class="form__container">
                     <div class="form__card-container">
@@ -90,7 +91,7 @@
                     <div class="form__card-container">
                         <div class="form__title">To</div>
                         <div class="card">
-                            <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH"></div>
+                            <div class="card__icon"><img src="https://www.tidebit.one/favicon.ico" alt="ETH"></div>
                             <div class="card__box">
                                 <div class="card__leading">TideBit Network</div>
                                 <div class="card__button button--grey">
@@ -176,31 +177,56 @@
         </div>
         </div>
     </footer>
-    <input type="checkbox"  id="assets-selector">
+    <input type="checkbox" id="assets-selector">
     <div class="popup">
         <div class="popup__content">
             <label for="assets-selector" class="popup__close">&times;</label>
             assets-selector
         </div>
     </div>
-    <input type="checkbox"  id="wallet-connect">
+    <input type="checkbox" id="wallet-connect" checked>
     <div class="popup">
         <div class="popup__content">
             <div class="popup__header">
                 <div class="popup__title">Wallet Connect</div>
-                <label for="wallet-connect" class="popup__close">&times;</label>
+                <label for="wallet-connect" class="popup__close button--grey"><i class="fas fa-times"></i></label>
             </div>
-            <div class="popup__button">
-                <span>MetaMask</span>
-                <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="MetaMask">
+            <div class="radio__toolbar">
+                <div class="radio__button-container">
+                    <input type="radio" name="metamask" id="connect-metamask">
+                    <label class="radio__button" for="connect-metamask">
+                        <span class="radio__text">MetaMask</span>
+                        <img class="radio__icon" src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg"
+                            alt="MetaMask">
+                    </label>
+                </div>
+                <div class="radio__button-container">
+                    <input type="radio" name="tidebit" id="connect-tidebit">
+                    <label class="radio__button" for="connect-tidebit">
+                        <span class="radio__text">TideBitChain</span>
+                        <span class="radio__icon"></span>
+                        <!-- <img src="https://www.tidebit.one/favicon.ico" alt="TideBit"> -->
+                </div>
+                <div class="radio__button-container disable">
+                    </label>
+                    <input type="radio" name="walletconnect" id="connect-walletconnect">
+                    <label class="radio__button " for="connect-walletconnect">
+                        <span class="radio__text">
+                            <span>WalletConnect</span>
+                            <span class="button__pill margin__right--small">Coming Soon</span>
+                        </span>
+                        <img class="radio__icon" src="https://walletconnect.org/walletconnect-logo.svg"
+                            alt="walletconnect">
+                    </label>
+                </div>
             </div>
-            <div class="popup__button">
-                <span>TideBitChain</span>
-                <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="MetaMask">
+            <div class="popup__button-box">
+                <div class="popup__button">
+                    <div class="button button__block button--primary">Wallet Connect</div>
+                </div>
             </div>
-            <div class="popup__button"><span>WalletConnect</span><span class="button--pill">Coming Soon</span><img src="" alt=""></div>
         </div>
-       
+
     </div>
 
 </html>

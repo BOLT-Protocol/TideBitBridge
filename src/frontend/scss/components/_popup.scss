@@ -29,9 +29,8 @@
     justify-content: flex-start;
     align-items: stretch;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
-    
     border-radius: 1em;
-    background-color: $color-white;
+    background-color: $color-grey-light-2;
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
@@ -41,8 +40,8 @@
     &__content {
       height: auto;
       width: 50vw;
-      max-height: #{"min(38.75rem, 75vh)"};
-      max-width: 31.25em;
+      // max-height: #{"min(42rem, 75vh)"};
+      max-width: 55rem;
     }
   }
 
@@ -60,27 +59,39 @@
   }
 
   &__close {
-    color: $color-grey-dark;
+    color: $color-black;
     position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    font-size: 3rem;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 3px;
     text-decoration: none;
     display: inline-block;
     transition: all 0.2s;
-    line-height: 1;
-
-    &:hover {
-      color: $color-primary;
+    & > i {
+      font-size: 2rem;
+      font-weight: 300;
+      padding: 0.5rem 1rem;
+      display: block;
     }
   }
-
-  &__btn-item {
-    width: 100%;
-    padding: 3rem 2rem;
-    font-size: $default-font-size * 1.1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  &__header {
+    padding: 1.5rem;
+    background-color: $color-white;
+    text-align: center;
+    border-bottom: 1px solid rgba($color-grey-dark, 0.2);
+  }
+  &__title {
+    font-size: $default-font-size * 1.2;
+  }
+  &__button-box {
+    background-color: $color-white;
+  }
+  &__button {
+    margin: 2rem;
+  }
+  &  .button__pill{
+    font-size: $default-font-size *0.85;
+    padding: 0.1rem 1rem;
+    display: inline;
   }
 }

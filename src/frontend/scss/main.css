@@ -167,7 +167,6 @@ a:visited {
 
 input[type=checkbox] {
   opacity: 0;
-  height: 0;
 }
 
 ::-moz-selection {
@@ -229,13 +228,14 @@ body {
 .footer {
   padding: 3rem 5rem;
   background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (min-width: 48rem) {
   .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    position: relative;
   }
 }
 
@@ -542,7 +542,6 @@ body {
 .button__pill {
   background-color: rgba(126, 213, 111, 0.5);
   color: #28b485;
-  width: 100%;
   padding: 0.5rem 2rem;
   border-radius: 32px;
   font-size: 1.76rem;
@@ -748,7 +747,7 @@ body {
   -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   border-radius: 1em;
-  background-color: #fff;
+  background-color: #eee;
   overflow: hidden;
   opacity: 0;
   -webkit-transform: translate(-50%, -50%) scale(0.25);
@@ -761,8 +760,7 @@ body {
   .popup__content {
     height: auto;
     width: 50vw;
-    max-height: min(38.75rem, 75vh);
-    max-width: 31.25em;
+    max-width: 55rem;
   }
 }
 
@@ -780,35 +778,47 @@ body {
 }
 
 .popup__close {
-  color: #777;
+  color: #000;
   position: absolute;
-  top: 2.5rem;
-  right: 2.5rem;
-  font-size: 3rem;
+  top: 2rem;
+  right: 2rem;
+  border-radius: 3px;
   text-decoration: none;
   display: inline-block;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  line-height: 1;
 }
 
-.popup__close:hover {
-  color: #55c57a;
+.popup__close > i {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  display: block;
 }
 
-.popup__btn-item {
-  width: 100%;
-  padding: 3rem 2rem;
-  font-size: 1.76rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.popup__header {
+  padding: 1.5rem;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: 1px solid rgba(119, 119, 119, 0.2);
+}
+
+.popup__title {
+  font-size: 1.92rem;
+}
+
+.popup__button-box {
+  background-color: #fff;
+}
+
+.popup__button {
+  margin: 2rem;
+}
+
+.popup .button__pill {
+  font-size: 1.36rem;
+  padding: 0.1rem 1rem;
+  display: inline;
 }
 
 .form__selector {
@@ -924,5 +934,71 @@ body {
 
 .dropdown__item > a {
   display: block;
+}
+
+.radio__toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio__toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: stretch;
+  background-color: #fff;
+  padding: 1rem 2rem;
+}
+
+.radio__button-container {
+  margin: 1rem 0;
+}
+
+.radio__button-container.diable .radio__button {
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.radio__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  padding: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eee;
+}
+
+.radio__text {
+  width: 100%;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.radio__icon {
+  width: 3rem;
+}
+
+label[for="connect-tidebit"] .radio__icon {
+  background-image: url(../image/tidebit_screenshot.png);
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
 }
 /*# sourceMappingURL=main.css.map */
