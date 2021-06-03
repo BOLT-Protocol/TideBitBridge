@@ -3,7 +3,7 @@
   height: 0;
   width: 0;
 
-  background-color: rgba($color-black, 0.8);
+  background-color: rgba($color-black, 0.4);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -12,12 +12,13 @@
   justify-content: center;
   display: flex;
 
-  @supports (-webkit-backdrop-filter: blur(10px)) or
-    (backdrop-filter: blur(10px)) {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba($color-black, 0.3);
-  }
+  // @supports (
+  //   -webkit-backdrop-filter: blur(10px)) or
+  //   (backdrop-filter: blur(10px)) {
+  //   -webkit-backdrop-filter: blur(10px);
+  //   backdrop-filter: blur(10px);
+    // background-color: rgba($color-black, 0.3);
+  // }
 
   &__content {
     @include absCenter;
@@ -90,10 +91,11 @@
   }
   &__button-box {
     background-color: $color-white;
+    padding: 2rem 2rem 3rem 2rem; 
   }
-  &__button {
-    margin: 2rem;
-  }
+  // &__button {
+  //   padding: 2rem;
+  // }
   & .button__pill {
     font-size: $default-font-size * 0.85;
     padding: 0.1rem 1rem;

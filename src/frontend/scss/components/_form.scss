@@ -60,13 +60,13 @@
     background-color: $color-grey-light-2;
     font-size: $default-font-size * 3;
   }
-  &__input:focus{
+  &__input:focus {
     border: 1px solid $color-primary-light;
     outline: none;
   }
   &__button {
     font-size: $default-font-size * 1.2;
-    display: block;
+    margin-top: 4rem;
   }
   &__add-assets {
     text-align: right;
@@ -82,7 +82,11 @@
       font-weight: 400;
     }
   }
-  &__available-option-box {
+  &__walletconnected {
+    display: flex;
+    flex-direction: column;
+  }
+  &__walletconnected-option-box {
     border: 1px solid $color-grey-dark-2;
     padding: 2rem 2rem 1rem 2rem;
     border-radius: 1rem;
@@ -104,7 +108,7 @@
       background-color: $color-grey-light-1;
     }
   }
-  &__available-checkbox {
+  &__walletconnected-checkbox {
     display: flex;
     align-items: center;
     height: 100%;
@@ -113,47 +117,47 @@
     padding: 1rem 2rem;
     background-color: $color-grey-light-2;
     border-radius: 5px;
-    font-size: $default-font-size *1;
+    font-size: $default-font-size * 1;
     display: flex;
-    
   }
   &__to-icon {
     display: flex;
     width: 2rem;
     margin-right: 1rem;
-    & img{
+    & img {
       width: 100%;
     }
   }
-  &__outline-box{  
+  &__outline-box {
     display: flex;
     border: 1px solid $color-primary-light;
     align-items: flex-start;
     background-color: rgba($color-primary-dark, 0.3);
   }
-  &__outline-box-icon{
+  &__outline-box-icon {
     color: $color-primary-dark;
     font-size: $default-font-size * 1.2;
     margin-right: 1rem;
   }
-  #swap-gas:checked + &__available-option-box > &__available-checkbox i {
+  #swap-gas:checked + &__walletconnected-option-box > &__walletconnected-checkbox i {
     border: 1px solid $color-primary-dark;
     background-color: $color-primary-dark;
   }
-  #swap-gas:checked + &__available-option-box &__swap-gas,
+  #swap-gas:checked + &__walletconnected-option-box &__swap-gas,
   #swap-gas:checked ~ &__swap-gas-hint--light,
-  #login-status:checked + & &__add-assets,
-  #login-status + & label[for="wallet-connect"],
-  #login-status:checked + & &__available {
-    @include appear;
+  #login-status:checked ~ * & &__add-assets,
+  #login-status ~ * & label[for="wallet-connect"],
+  #login-status:checked ~ * & &__walletconnected {
+    // @include appear;
+    display: flex;
   }
-
-  #swap-gas + &__available-option-box &__swap-gas,
+  #swap-gas + &__walletconnected-option-box &__swap-gas,
   #swap-gas ~ &__swap-gas-hint--light,
-  #login-status + & &__available,
-  #login-status + & &__add-assets,
-  #login-status:checked + & label[for="wallet-connect"],
-  #login-status:checked + & &__estimate {
-    @include disappear;
+  #login-status ~ * & &__walletconnected,
+  #login-status ~ * & &__add-assets,
+  #login-status:checked ~ * & label[for="wallet-connect"],
+  #login-status:checked ~ * & &__estimate {
+    // @include disappear;
+    display: none;
   }
 }

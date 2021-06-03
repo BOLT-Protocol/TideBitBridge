@@ -10,7 +10,7 @@
   }
   &__block {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     font-weight: 400;
     font-size: $default-font-size * 1.1;
   }
@@ -23,15 +23,18 @@
   &--primary {
     text-align: center;
     background-color: $color-primary;
-    &:hover{
+    &:hover {
       background-color: $color-primary-light;
     }
   }
   &--grey {
     background-color: $color-grey-light-2;
-    &:hover{
+    &:hover {
       background-color: $color-primary-light;
     }
+  }
+  &--logout {
+    background-color: $color-grey-light-2;
   }
   &__label {
     background-color: $color-primary-light;
@@ -49,13 +52,12 @@
     & > a:link,
     & > a:visited {
       @include absCenter;
-      font-size: $default-font-size *2;
+      font-size: $default-font-size * 2;
       color: $color-black;
     }
     &:hover > a {
       color: $color-primary-dark;
     }
-   
   }
   &__pill {
     background-color: rgba($color-primary-light, 0.5);
@@ -64,9 +66,9 @@
     padding: 0.5rem 2rem;
     border-radius: 32px;
     font-size: $default-font-size * 1.1;
-    > a:link, >:visited{
+    > a:link,
+    > :visited {
       color: $color-primary-dark;
     }
-   
   }
 }

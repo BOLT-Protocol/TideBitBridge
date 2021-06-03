@@ -17,7 +17,9 @@
 </head>
 
 <body>
-    <input type="checkbox" id="assets-selector">
+    <input type="checkbox" name="pannel-control" id="login-status">
+    <input type="radio" name="pannel-control" id="pannel-close" checked>
+    <input type="radio" name="pannel-control" id="assets-selector">
     <div class="popup">
         <div class="popup__content">
             <div class="popup__header">
@@ -25,7 +27,7 @@
                     <span class="scrollview__searchbar-icon"><i class="fas fa-search"></i></span>
                     <input type="text" name="asset" id="selected-assets" class="scrollview__searchbar-input">
                 </div>
-                <label for="assets-selector" class="popup__close button--grey"><i class="fas fa-times"></i></label>
+                <label for="pannel-close" class="popup__close button--grey"><i class="fas fa-times"></i></label>
             </div>
             <div class="size-box size-box__height--medium"></div>
             <div class="scrollview">
@@ -99,12 +101,12 @@
             </div>
         </div>
     </div>
-    <input type="checkbox" id="wallet-connect">
+    <input type="radio" name="pannel-control" id="wallet-connect">
     <div class="popup">
         <div class="popup__content">
             <div class="popup__header">
                 <div class="popup__title">Wallet Connect</div>
-                <label for="wallet-connect" class="popup__close button--grey"><i class="fas fa-times"></i></label>
+                <label for="pannel-close" class="popup__close button--grey"><i class="fas fa-times"></i></label>
             </div>
             <div class="radio__toolbar">
                 <div class="radio__button-container">
@@ -136,9 +138,9 @@
                 </div>
             </div>
             <div class="popup__button-box">
-                <div class="popup__button">
+                <label for="login-status" class="popup__button">
                     <div class="button button__block button--primary">Wallet Connect</div>
-                </div>
+                </label>
             </div>
         </div>
 
@@ -155,10 +157,14 @@
                     <li class="button__pill "><a href="#">TideBit Bridge</a></li>
                 </ui>
                 <li class="navigation__item">
-                    <div class="dropdown__button button button__block" id="exchange"><span
-                            class="text margin__right--small">Exchange</span><i class="fas fa-caret-down"></i>
-                    </div>
-                    <input type="checkbox" class="dropdown__toggle" checked>
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown">
+                    <label for="pannel-close"></label>
+                    <label class="dropdown__button button button__block" for="exchange-dropdown">
+                        <span class="text margin__right--small">
+                            Exchange
+                        </span>
+                        <i class="fas fa-caret-down"></i>
+                    </label>
                     <ul class="dropdown__menu">
                         <li class="dropdown__item"><a href="#">1</a></li>
                         <li class="dropdown__item"><a href="#">2</a></li>
@@ -166,10 +172,11 @@
                     </ul>
                 </li>
                 <li class="navigation__item">
-                    <div class="dropdown__button button button__block" id="wallet"><span
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="wallet-dropdown">
+                    <label for="pannel-close"></label>
+                    <label class="dropdown__button button button__block" for="wallet-dropdown"><span
                             class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i>
-                    </div>
-                    <input type="checkbox" class="dropdown__toggle" checked>
+                    </label>
                     <ul class="dropdown__menu">
                         <li class="dropdown__item"><a href="#">1</a></li>
                         <li class="dropdown__item"><a href="#">2</a></li>
@@ -177,10 +184,11 @@
                     </ul>
                 </li>
                 <li class="navigation__item">
-                    <div class="dropdown__button button button__block" id="explorer"><span
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="explorer-dropdown">
+                    <label for="pannel-close"></label>
+                    <label class="dropdown__button button button__block" for="explorer-dropdown"><span
                             class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i>
-                    </div>
-                    <input type="checkbox" class="dropdown__toggle" checked>
+                    </label>
                     <ul class="dropdown__menu">
                         <li class="dropdown__item"><a href="#">1</a></li>
                         <li class="dropdown__item"><a href="#">2</a></li>
@@ -189,6 +197,22 @@
                 </li>
             </ui>
         </nav>
+        <div class="header__user">
+            <input type="radio" name="pannel-control" class="dropdown__toggle" id="user-info-dropdown">
+            <label for="pannel-close"></label>
+            <label class="header__user-info" for="user-info-dropdown">
+                <span class="header__user-address">
+                    <span class="header__user-address--icon">
+                        <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="metamask">
+                    </span>
+                    <span class="header__user-address--path">0x88e...80dad</span>
+                </span>
+                <span class="header__user-network">Ethereum Network</span>
+            </label>
+            <ul class="dropdown__menu">
+                <li class="dropdown__item"><label for="login-status">Disconnect</label></li>
+            </ul>
+        </div>
         <div class="header__button">
             <label for="wallet-connect" class="button button__block button--primary ">Connect Wallet</label>
         </div>
@@ -196,8 +220,8 @@
     <main class="margin__top--medium margin__bottom--medium">
         <section class="section">
             <div class="pannel pannel--main">
-                <input type="checkbox" name="loginstate" id="login-status" checked>
-                <label for="login-status" class="form">
+                <!-- <label for="login-status" class="form"> -->
+                <div class="form">
                     <div class="form__title">Assets</div>
                     <label for="assets-selector" class="form__selector button button__block"><span>ETH</span><i
                             class="fas fa-chevron-right"></i></label for="assets-selector">
@@ -258,13 +282,13 @@
                             class="form__hint-text--amount">0 ETH</span><span
                             class="button__pill margin__left--small">BEP
                             20</span></div>
-                    <div class="form__available">
-                        <div class="form__available-amount-box form__hint-text">Available: <span
-                                class="form__available-amount">0
+                    <div class="form__walletconnected">
+                        <div class="form__walletconnected-amount-box form__hint-text">Available: <span
+                                class="form__walletconnected-amount">0
                                 ETH</span></div>
                         <input type="checkbox" name="swap-gas" id="swap-gas">
-                        <div class="form__available-option-box form__hint-text--dark">
-                            <div class="form__available-checkbox">
+                        <div class="form__walletconnected-option-box form__hint-text--dark">
+                            <div class="form__walletconnected-checkbox">
                                 <label for="swap-gas" class="form__checkbox margin__right--small">
                                     <i class="fas fa-check"></i>
                                 </label>
@@ -326,12 +350,11 @@
                         </div>
                     </div>
                     <label for="wallet-connect" class="form__button">
-                        <div class="size-box size-box__height--medium"></div>
                         <div class="button button__block button--primary ">Connect
                             Wallet
                         </div>
                     </label>
-                </label>
+                </div>
             </div>
             <div class="pannel pannel--sub">
                 <div class="heading__primary">TideBit Bridge</div>
@@ -375,11 +398,12 @@
                         </div>
                     </div>
                     <div class="dropdown__button">
-                        <div class="button  button__inline button--grey" id="i18n"><i
+                        <input type="radio" name="pannel-control" class="dropdown__toggle" id="i18n-dropdown">
+                        <label for="pannel-close"></label>
+                        <label class="button  button__inline button--grey" for="i18n-dropdown"><i
                                 class="fas fa-globe-americas margin__right--small"></i><span
                                 class="margin__right--small">English</span><i
-                                class="fas fa-caret-down margin__left--small"></i></div>
-                        <input type="checkbox" class="dropdown__toggle" checked>
+                                class="fas fa-caret-down margin__left--small"></i></label>
                         <ul class="dropdown__menu">
                             <li class="dropdown__item"><a href="#">1</a></li>
                             <li class="dropdown__item"><a href="#">2</a></li>
