@@ -53,7 +53,7 @@
     "url": "git+https://github.com/BOLT-Protocol/TideBitBridge.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open 'google chrome'",
+    "dev": "webpack-dev-server --mode=development --open 'google chrome'",
     "start": "bin/main.js"
   },
   "version": "0.1.0"
