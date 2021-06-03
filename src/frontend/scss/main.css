@@ -201,12 +201,12 @@ input[type="radio"]:not(:checked) ~ label[for="pannel-close"] {
 }
 
 ::-moz-selection {
-  background-color: #55c57a;
+  background-color: #4ECDC4;
   color: #fff;
 }
 
 ::selection {
-  background-color: #55c57a;
+  background-color: #4ECDC4;
   color: #fff;
 }
 
@@ -585,7 +585,7 @@ body {
 
 .button--primary {
   text-align: center;
-  background-color: #55c57a;
+  background-color: #4ECDC4;
 }
 
 .button--primary:hover {
@@ -995,6 +995,35 @@ body {
   display: inline;
 }
 
+.form__progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.form__progress-bar {
+  margin-top: 0.5rem;
+  height: 7px;
+  border-radius: 7px;
+  width: 14rem;
+  background-color: #eee;
+}
+
+.form__progress-bar span {
+  display: block;
+  border-radius: 6px;
+  height: 100%;
+  background-color: #7ed56f;
+}
+
 .form__selector {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1205,7 +1234,8 @@ body {
   margin-right: 1rem;
 }
 
-#swap-gas:checked + .form__walletconnected-option-box > .form__walletconnected-checkbox i {
+#swap-gas:checked
++ .form__walletconnected-option-box > .form__walletconnected-checkbox i {
   border: 1px solid #28b485;
   background-color: #28b485;
 }
