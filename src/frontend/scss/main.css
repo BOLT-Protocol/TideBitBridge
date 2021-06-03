@@ -1252,11 +1252,26 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
+  -webkit-transition: all 0.25s 0.1s;
+  transition: all 0.25s 0.1s;
   border-radius: 0.5rem;
   -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
           box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown__menu {
+  opacity: 0;
+}
+
+.dropdown__item {
+  display: none;
+  opacity: 0;
+}
+
+.dropdown__toggle:checked ~ .dropdown__menu,
+.dropdown__toggle:checked ~ .dropdown__menu > .dropdown__item {
+  display: block;
+  opacity: 1;
 }
 
 .header .dropdown__menu {
@@ -1327,17 +1342,6 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 1.6rem;
-}
-
-.dropdown__menu, .dropdown__item {
-  display: none;
-  opacity: 0;
-}
-
-.dropdown__toggle:checked ~ .dropdown__menu,
-.dropdown__toggle:checked ~ .dropdown__menu > .dropdown__item {
-  display: block;
-  opacity: 1;
 }
 
 .radio__toolbar {
