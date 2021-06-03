@@ -156,7 +156,7 @@
                 <ui class="navigation__item">
                     <li class="button__pill "><a href="#">TideBit Bridge</a></li>
                 </ui>
-                <li class="navigation__item">
+                <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown">
                     <label for="pannel-close"></label>
                     <label class="dropdown__button button button__block" for="exchange-dropdown">
@@ -166,33 +166,36 @@
                         <i class="fas fa-caret-down"></i>
                     </label>
                     <ul class="dropdown__menu">
-                        <li class="dropdown__item"><a href="#">1</a></li>
-                        <li class="dropdown__item"><a href="#">2</a></li>
-                        <li class="dropdown__item"><a href="#">3</a></li>
+                        <li class="dropdown__item"><a href="#">Tokens (TBC2)</a></li>
+                        <li class="dropdown__item"><a href="#">MiniTokens (TBC8)</a></li>
+                        <li class="dropdown__item"><a href="#">TideBit Bridge</a></li>
                     </ul>
                 </li>
-                <li class="navigation__item">
+                <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="wallet-dropdown">
                     <label for="pannel-close"></label>
                     <label class="dropdown__button button button__block" for="wallet-dropdown"><span
                             class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i>
                     </label>
                     <ul class="dropdown__menu">
-                        <li class="dropdown__item"><a href="#">1</a></li>
-                        <li class="dropdown__item"><a href="#">2</a></li>
-                        <li class="dropdown__item"><a href="#">3</a></li>
+                        <li class="dropdown__item"><a href="#">TideBit Chain Wallet (Extension)</a></li>
+                        <li class="dropdown__item"><a href="#">Trust Wallet</a></li>
                     </ul>
                 </li>
-                <li class="navigation__item">
+                <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="explorer-dropdown">
                     <label for="pannel-close"></label>
                     <label class="dropdown__button button button__block" for="explorer-dropdown"><span
                             class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i>
                     </label>
                     <ul class="dropdown__menu">
-                        <li class="dropdown__item"><a href="#">1</a></li>
-                        <li class="dropdown__item"><a href="#">2</a></li>
-                        <li class="dropdown__item"><a href="#">3</a></li>
+                        <div class="dropdown__item--title">TideBit Chain</div>
+                        <li class="dropdown__item">
+                            <a href="#">TC Explorer</a>
+                        </li>
+                        <div class="dropdown__item--title">TideBit Smart Chain</div>
+                        <li class="dropdown__item"><a href="#">TscScan</a></li>
+                        <li class="dropdown__item"><a href="#">TitQuery</a></li>
                     </ul>
                 </li>
             </ui>
@@ -209,7 +212,7 @@
                 </span>
                 <span class="header__user-network">Ethereum Network</span>
             </label>
-            <ul class="dropdown__menu">
+            <ul class="dropdown__menu dropdown__menu--down">
                 <li class="dropdown__item"><label for="login-status">Disconnect</label></li>
             </ul>
         </div>
@@ -235,30 +238,40 @@
                     <div class="form__container">
                         <div class="form__card-container">
                             <div class="form__title">From</div>
-                            <div class="card">
+                            <div class="card form__card--left dropdown">
                                 <div class="card__icon"><img src="https://www.tidebit.one/icons/eth.png" alt="ETH">
                                 </div>
                                 <div class="card__box">
                                     <div class="card__leading">Ethereum Network</div>
-                                    <div class="card__button button--grey">
+                                    <label for="form-card-left" class="card__button button button--grey">
                                         <i class="fas fa-caret-down"></i>
-                                    </div>
+                                    </label>
+                                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="form-card-left">
+                                    <label for="pannel-close"></label>
+                                    <ul class="dropdown__menu">
+                                        <li class="dropdown__item">TideBit Network</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="card__switch button--grey">
+                        <div class="card__switch button button--grey">
                             <i class="fas fa-arrow-right"></i>
                         </div>
                         <div class="form__card-container">
                             <div class="form__title">To</div>
-                            <div class="card">
+                            <div class="card form__card--right dropdown">
                                 <div class="card__icon"><img src="https://www.tidebit.one/favicon.ico" alt="ETH">
                                 </div>
                                 <div class="card__box">
                                     <div class="card__leading">TideBit Network</div>
-                                    <div class="card__button button--grey">
+                                    <label for="form-card-right" class="card__button button button--grey dropdown">
                                         <i class="fas fa-caret-down"></i>
-                                    </div>
+                                    </label>
+                                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="form-card-right">
+                                    <label for="pannel-close"></label>
+                                    <ul class="dropdown__menu">
+                                        <li class="dropdown__item">Ethereum Network</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +410,7 @@
                                     class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="dropdown__button">
+                    <div class="dropdown dropdown__button">
                         <input type="radio" name="pannel-control" class="dropdown__toggle" id="i18n-dropdown">
                         <label for="pannel-close"></label>
                         <label class="button  button__inline button--grey" for="i18n-dropdown"><i
@@ -405,9 +418,9 @@
                                 class="margin__right--small">English</span><i
                                 class="fas fa-caret-down margin__left--small"></i></label>
                         <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#">1</a></li>
-                            <li class="dropdown__item"><a href="#">2</a></li>
-                            <li class="dropdown__item"><a href="#">3</a></li>
+                            <li class="dropdown__item"><a href="#">English</a></li>
+                            <li class="dropdown__item"><a href="#">繁體中文</a></li>
+                            <li class="dropdown__item"><a href="#">簡體中文</a></li>
                         </ul>
                     </div>
                 </div>

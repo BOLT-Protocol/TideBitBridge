@@ -2,7 +2,7 @@
   padding: 2rem;
   width: 100%;
   background-color: $color-white;
-  border-radius: 10px;
+  border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem 2rem rgba($color-black, 0.15);
 
   &__box {
@@ -23,13 +23,11 @@
     line-height: 1.2;
   }
   &__button {
-   
     border-radius: 3px;
     & > i {
       display: block;
       font-size: $default-font-size * 1;
       padding: 1rem 1rem;
-    
     }
   }
 
@@ -45,4 +43,3 @@
     }
   }
 }
-

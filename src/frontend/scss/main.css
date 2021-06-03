@@ -337,11 +337,6 @@ body {
   font-size: 3.2rem;
 }
 
-.footer .dropdown__menu {
-  left: 1rem;
-  bottom: 70px;
-}
-
 .row {
   max-width: 124rem;
   margin: 0 auto;
@@ -657,7 +652,7 @@ body {
   padding: 2rem;
   width: 100%;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 1rem;
   -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
           box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
 }
@@ -1234,35 +1229,21 @@ body {
   display: none;
 }
 
-.dropdown__button {
+.dropdown {
   position: relative;
+}
+
+.dropdown__button {
   display: inline-block;
 }
 
-.dropdown__toggle {
-  cursor: pointer;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  cursor: pointer;
-  height: 50px;
-}
-
-.dropdown__toggle:checked ~ .dropdown__menu,
-.dropdown__toggle:checked ~ .dropdown__menu > li {
-  height: 100%;
-  opacity: 1;
-}
-
-.dropdown__toggle:checked ~ .dropdown__menu > li {
-  display: block;
-}
-
 .dropdown__menu {
-  height: 0%;
-  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 24rem;
   position: absolute;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1271,13 +1252,92 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  border-radius: 5px;
-  -webkit-transition: all 0.35s 0.1s;
-  transition: all 0.35s 0.1s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
 }
 
-.dropdown__menu__item {
+.header .dropdown__menu {
+  top: 4rem;
+  left: 15%;
+}
+
+.header .dropdown__toggle:checked ~ .dropdown__menu {
+  top: 6rem;
+}
+
+.form__card--right .dropdown__menu {
+  right: 0;
+}
+
+.form__card--left .dropdown__menu {
+  left: 0;
+}
+
+.form__card--left .dropdown__menu,
+.form__card--right .dropdown__menu {
+  bottom: -3rem;
+}
+
+.form__card--left .dropdown__toggle:checked ~ .dropdown__menu,
+.form__card--right .dropdown__toggle:checked ~ .dropdown__menu {
+  bottom: -5rem;
+}
+
+.footer .dropdown__menu {
+  right: 0%;
+  bottom: 4rem;
+}
+
+.footer .dropdown__toggle:checked ~ .dropdown__menu {
+  bottom: 6rem;
+}
+
+.dropdown__item {
+  padding: 1.5rem 2rem;
+}
+
+.dropdown__item--title {
+  color: #999;
+  font-size: 1.44rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.dropdown__item--title:nth-child(n-1) {
+  border-top: 1px solid #eee;
+}
+
+.dropdown__item:hover {
+  padding: 1.5rem 2rem;
+  color: #28b485;
+  background-color: rgba(40, 180, 133, 0.15);
+}
+
+.dropdown__menu .dropdown__item:hover a {
+  color: #28b485;
+}
+
+.dropdown__item,
+.dropdown__item a,
+.dropdown__item a:link,
+.dropdown__item a:visited {
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.6rem;
+}
+
+.dropdown__menu, .dropdown__item {
   display: none;
+  opacity: 0;
+}
+
+.dropdown__toggle:checked ~ .dropdown__menu,
+.dropdown__toggle:checked ~ .dropdown__menu > .dropdown__item {
+  display: block;
+  opacity: 1;
 }
 
 .radio__toolbar {
