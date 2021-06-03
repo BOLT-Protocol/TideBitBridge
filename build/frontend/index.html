@@ -227,7 +227,7 @@
         <nav class="drawer">
             <ui class="drawer__list">
                 <li class="drawer__item dropdown">
-                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown-drawer">
+                    <input type="checkbox" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown-drawer">
                     <label for="pannel-close"></label>
                     <label class="dropdown__button" for="exchange-dropdown-drawer">
                         <span class="text margin__right--small">Exchange</span>
@@ -240,7 +240,7 @@
                     </ul>
                 </li>
                 <li class="drawer__item dropdown">
-                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="wallet-dropdown-drawer">
+                    <input type="checkbox" name="pannel-control" class="dropdown__toggle" id="wallet-dropdown-drawer">
                     <label for="pannel-close"></label>
                     <label class="dropdown__button" for="wallet-dropdown-drawer"><span
                             class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i>
@@ -251,7 +251,7 @@
                     </ul>
                 </li>
                 <li class="drawer__item dropdown">
-                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="explorer-dropdown-drawer">
+                    <input type="checkbox" name="pannel-control" class="dropdown__toggle" id="explorer-dropdown-drawer">
                     <label for="pannel-close"></label>
                     <label class="dropdown__button" for="explorer-dropdown-drawer"><span
                             class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i>
@@ -443,47 +443,42 @@
         </section>
     </main>
     <footer class="footer">
-        <div class='row'>
-            <div class='col-1-of-2'>
-                <div class="footer__button">
-                    <a href="#"> Term of use</a>
-                </div>
-                <div class="footer__text">
-                    © 2019 - 2020, TideBit All rights reserved.
-                </div>
+        <div class='footer__pannel footer__pannel--sub'>
+            <div class="footer__button">
+                <a href="#"> Term of use</a>
             </div>
-            <div class='col-1-of-2'>
-                <div class="footer__container">
-                    <div class="footer__social-media">
-                        <div class="button__icon">
-                            <a href="https://t.me/tidebitofficial" target="_blank"><i
-                                    class="fab fa-telegram-plane"></i></a>
-                        </div>
-                        <div class="button__icon">
-                            <a href="https://www.facebook.com/tidebit" target="_blank"><i
-                                    class="fab fa-facebook-f"></i></a>
-                        </div>
-                        <div class="button__icon">
-                            <a href="https://www.facebook.com/tidebit" target="_blank"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
+            <div class="footer__text">
+                © 2019 - 2020, TideBit All rights reserved.
+            </div>
+        </div>
+        <div class='footer__pannel footer__pannel--main'>
+            <div class="footer__container">
+                <div class="footer__social-media">
+                    <div class="button__icon">
+                        <a href="https://t.me/tidebitofficial" target="_blank"><i class="fab fa-telegram-plane"></i></a>
                     </div>
-                    <div class="dropdown dropdown__button">
-                        <input type="radio" name="pannel-control" class="dropdown__toggle" id="i18n-dropdown">
-                        <label for="pannel-close"></label>
-                        <label class="button  button__inline button--grey" for="i18n-dropdown"><i
-                                class="fas fa-globe-americas margin__right--small"></i><span
-                                class="margin__right--small">English</span><i
-                                class="fas fa-caret-down margin__left--small"></i></label>
-                        <ul class="dropdown__menu">
-                            <li class="dropdown__item"><a href="#">English</a></li>
-                            <li class="dropdown__item"><a href="#">繁體中文</a></li>
-                            <li class="dropdown__item"><a href="#">簡體中文</a></li>
-                        </ul>
+                    <div class="button__icon">
+                        <a href="https://www.facebook.com/tidebit" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
+                    <div class="button__icon">
+                        <a href="https://www.facebook.com/tidebit" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="dropdown dropdown__button">
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="i18n-dropdown">
+                    <label for="pannel-close"></label>
+                    <label class="button  button__inline button--grey" for="i18n-dropdown"><i
+                            class="fas fa-globe-americas margin__right--small"></i><span
+                            class="margin__right--small">English</span><i
+                            class="fas fa-caret-down margin__left--small"></i></label>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="#">English</a></li>
+                        <li class="dropdown__item"><a href="#">繁體中文</a></li>
+                        <li class="dropdown__item"><a href="#">簡體中文</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </footer>
-
 </html>

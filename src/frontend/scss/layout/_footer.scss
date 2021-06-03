@@ -2,6 +2,18 @@
   padding: 3rem 5rem;
   background-color: $color-white;
   width:100%;
+  display: flex;
+  flex-direction: column-reverse;
+  &__pannel--main{
+    margin-bottom: 4rem;
+  }
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    justify-content: space-between;
+    &__pannel--main{
+      margin-bottom: 0rem;
+    }
+  }
   
   &__text {
     font-size: $default-font-size;
@@ -28,9 +40,7 @@
     display: flex;
     justify-content: space-between;
   }
-  @media (min-width: 48rem) {
-    justify-content: flex-end;
-  }
+ 
   & .button{
     display: flex;
     align-items: center;

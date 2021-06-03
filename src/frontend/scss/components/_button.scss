@@ -52,7 +52,7 @@
     & > a:link,
     & > a:visited {
       @include absCenter;
-      font-size: $default-font-size * 2;
+      font-size: $default-font-size * 1.8;
       color: $color-black;
     }
     &:hover > a {
