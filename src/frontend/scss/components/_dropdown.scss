@@ -42,11 +42,13 @@
     right: 0;
   }
   .form__card--left &__menu {
-    left: 0;
+    left: 70%;
   }
   .form__card--left &__menu,
   .form__card--right &__menu {
     bottom: -3rem;
+    z-index: 1;
+    min-width: 36rem;
   }
   .form__card--left &__toggle:checked ~ &__menu,
   .form__card--right &__toggle:checked ~ &__menu {

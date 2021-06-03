@@ -17,7 +17,9 @@
 </head>
 
 <body>
-    <input type="checkbox" name="pannel-control" id="login-status">
+    <input type="radio" name="pannel-control" id="navigation-drawer">
+    <label for="pannel-close"></label>
+    <input type="checkbox" name="pannel-control" id="login-status" >
     <input type="radio" name="pannel-control" id="pannel-close" checked>
     <input type="radio" name="pannel-control" id="assets-selector">
     <div class="popup">
@@ -146,16 +148,16 @@
 
     </div>
     <header class="header">
+        <div class="header__logo-box">
+            <a href="#" class="header__link">
+                <img src="https://www.tidebit.one/tidebit_footer_logo.svg" alt="Logo" class="header__logo" />
+            </a>
+        </div>
+        <ui class="header__button">
+            <li class="button__pill "><a href="#">TideBit Bridge</a></li>
+        </ui>
         <nav class="navigation__navbar">
-            <div class="header__logo-box">
-                <a href="#" class="header__link">
-                    <img src="https://www.tidebit.one/tidebit_footer_logo.svg" alt="Logo" class="header__logo" />
-                </a>
-            </div>
             <ui class="navigation__list">
-                <ui class="navigation__item">
-                    <li class="button__pill "><a href="#">TideBit Bridge</a></li>
-                </ui>
                 <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown">
                     <label for="pannel-close"></label>
@@ -194,13 +196,13 @@
                             <a href="#">TC Explorer</a>
                         </li>
                         <div class="dropdown__item--title">TideBit Smart Chain</div>
-                        <li class="dropdown__item"><a href="#">TscScan</a></li>
+                        <li class="dropdown__item"><a href="#">TcsScan</a></li>
                         <li class="dropdown__item"><a href="#">TitQuery</a></li>
                     </ul>
                 </li>
             </ui>
         </nav>
-        <div class="header__user">
+        <div class="header__user margin__right--small">
             <input type="radio" name="pannel-control" class="dropdown__toggle" id="user-info-dropdown">
             <label for="pannel-close"></label>
             <label class="header__user-info" for="user-info-dropdown">
@@ -219,6 +221,9 @@
         <div class="header__button">
             <label for="wallet-connect" class="button button__block button--primary ">Connect Wallet</label>
         </div>
+        <label for="navigation-drawer" class="navigation__drawer-toggle">
+            <div class="navigation__hamburger"></div>
+        </label>
     </header>
     <main class="margin__top--medium margin__bottom--medium">
         <section class="section">
@@ -250,7 +255,8 @@
                                     <label for="form-card-left" class="card__button button button--grey">
                                         <i class="fas fa-caret-down"></i>
                                     </label>
-                                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="form-card-left">
+                                    <input type="radio" name="pannel-control" class="dropdown__toggle"
+                                        id="form-card-left">
                                     <label for="pannel-close"></label>
                                     <ul class="dropdown__menu">
                                         <li class="dropdown__item">TideBit Network</li>
@@ -271,7 +277,8 @@
                                     <label for="form-card-right" class="card__button button button--grey dropdown">
                                         <i class="fas fa-caret-down"></i>
                                     </label>
-                                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="form-card-right">
+                                    <input type="radio" name="pannel-control" class="dropdown__toggle"
+                                        id="form-card-right">
                                     <label for="pannel-close"></label>
                                     <ul class="dropdown__menu">
                                         <li class="dropdown__item">Ethereum Network</li>
@@ -304,7 +311,7 @@
                                 class="form__walletconnected-amount">0
                                 ETH</span></div>
                         <input type="checkbox" name="swap-gas" id="swap-gas">
-                        <div class="form__walletconnected-option-box form__hint-text--dark">
+                        <div class="form__walletconnected-option-box form__hint-text form__hint-text--dark">
                             <div class="form__walletconnected-checkbox">
                                 <label for="swap-gas" class="form__checkbox margin__right--small">
                                     <i class="fas fa-check"></i>

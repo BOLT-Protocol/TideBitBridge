@@ -12,7 +12,7 @@
     background-color: $color-white;
     padding: 1rem 2rem;
   }
-  #login-status + .form &__toolbar {
+  #login-status ~ * .form &__toolbar {
     flex-direction: row;
     padding: 0;
   }
@@ -20,11 +20,11 @@
   &__button-container {
     margin: 1rem 0;
   }
-  #login-status + .form &__button-container {
+  #login-status ~ * .form &__button-container {
     margin: 0;
     width: 100%;
   }
-  #login-status + .form &__button-container:not(:last-child) {
+  #login-status ~ * .form &__button-container:not(:last-child) {
     margin: 0 1rem 0 0;
   }
   &:disabled + &__button {

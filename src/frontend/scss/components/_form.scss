@@ -107,12 +107,17 @@
   }
   &__walletconnected-option-box {
     border: 1px solid $color-grey-dark-2;
-    padding: 2rem 2rem 1rem 2rem;
+    // padding: 2rem 2rem 1rem 2rem;
+    padding: 2rem;
     border-radius: 1rem;
     margin-top: 0.5rem;
   }
   &__swap-gas-hint {
     margin: 1rem 0;
+  }
+  &__swap-gas{
+    display: flex;
+    flex-direction: column;
   }
   & #swap-gas {
     @include absCenter;
@@ -166,7 +171,7 @@
     background-color: $color-primary-dark;
   }
   #swap-gas:checked + &__walletconnected-option-box &__swap-gas,
-  #swap-gas:checked ~ &__swap-gas-hint--light,
+  #swap-gas:checked ~ * &__swap-gas-hint--light,
   #login-status:checked ~ * & &__add-assets,
   #login-status ~ * & label[for="wallet-connect"],
   #login-status:checked ~ * & &__walletconnected {
@@ -174,7 +179,7 @@
     display: flex;
   }
   #swap-gas + &__walletconnected-option-box &__swap-gas,
-  #swap-gas ~ &__swap-gas-hint--light,
+  #swap-gas ~ * &__swap-gas-hint--light,
   #login-status ~ * & &__walletconnected,
   #login-status ~ * & &__add-assets,
   #login-status:checked ~ * & label[for="wallet-connect"],

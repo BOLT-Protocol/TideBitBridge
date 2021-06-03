@@ -1,19 +1,22 @@
 .header {
   background-color: $color-white;
-  padding: 2rem 3rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  height: 8rem;
+  position: relative;
   &__logo-box {
-    width: 16rem;
-    margin-right: 2rem;
+    min-width: 16rem;
+    max-width: 18rem;
+    margin-right: 1rem;
   }
   &__logo {
     width: 100%;
   }
   &__button {
     max-width: 20rem;
-
+    min-width: 16rem;
     text-align: center;
     a:link,
     :visited {
@@ -57,4 +60,16 @@
     display: flex;
   }
 
+  @include respond(tab-port) {
+    justify-content: space-between;
+    &__button:nth-child(n) {
+      display: none;
+    }
+  }
+
+  @include respond(phone) {
+    &__button {
+      display: none;
+    }
+  }
 }
