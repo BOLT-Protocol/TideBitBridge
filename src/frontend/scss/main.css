@@ -1515,10 +1515,12 @@ body {
   opacity: 1;
 }
 
+.header__user .dropdown__menu,
 .navigation__navbar .dropdown__menu {
   top: 4rem;
 }
 
+.header__user .dropdown__toggle:checked ~ .dropdown__menu,
 .navigation__navbar .dropdown__toggle:checked ~ .dropdown__menu {
   top: 6rem;
 }

@@ -30,13 +30,14 @@
     display: block;
     opacity: 1;
   }
-
+  .header__user &__menu,
   .navigation__navbar &__menu {
     // @include absCenter;
     top: 4rem;
     // left: 15%;
     // transform: translate(-50%,0);
   }
+  .header__user &__toggle:checked ~ &__menu,
   .navigation__navbar &__toggle:checked ~ &__menu {
     top: 6rem;
   }
