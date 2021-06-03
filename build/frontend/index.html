@@ -19,8 +19,8 @@
 <body>
     <input type="radio" name="pannel-control" id="navigation-drawer">
     <label for="pannel-close"></label>
-    <input type="checkbox" name="pannel-control" id="login-status" >
-    <input type="radio" name="pannel-control" id="pannel-close" checked>
+    <input type="checkbox" name="pannel-control" id="login-status" checked>
+    <input type="radio" name="pannel-control" id="pannel-close">
     <input type="radio" name="pannel-control" id="assets-selector">
     <div class="popup">
         <div class="popup__content">
@@ -153,7 +153,7 @@
                 <img src="https://www.tidebit.one/tidebit_footer_logo.svg" alt="Logo" class="header__logo" />
             </a>
         </div>
-        <ui class="header__button">
+        <ui class="header__link">
             <li class="button__pill "><a href="#">TideBit Bridge</a></li>
         </ui>
         <nav class="navigation__navbar">
@@ -161,7 +161,7 @@
                 <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown">
                     <label for="pannel-close"></label>
-                    <label class="dropdown__button button button__block" for="exchange-dropdown">
+                    <label class="dropdown__button" for="exchange-dropdown">
                         <span class="text margin__right--small">
                             Exchange
                         </span>
@@ -176,7 +176,7 @@
                 <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="wallet-dropdown">
                     <label for="pannel-close"></label>
-                    <label class="dropdown__button button button__block" for="wallet-dropdown"><span
+                    <label class="dropdown__button" for="wallet-dropdown"><span
                             class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i>
                     </label>
                     <ul class="dropdown__menu">
@@ -187,7 +187,7 @@
                 <li class="navigation__item dropdown">
                     <input type="radio" name="pannel-control" class="dropdown__toggle" id="explorer-dropdown">
                     <label for="pannel-close"></label>
-                    <label class="dropdown__button button button__block" for="explorer-dropdown"><span
+                    <label class="dropdown__button" for="explorer-dropdown"><span
                             class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i>
                     </label>
                     <ul class="dropdown__menu">
@@ -202,7 +202,7 @@
                 </li>
             </ui>
         </nav>
-        <div class="header__user margin__right--small">
+        <div class="header__user">
             <input type="radio" name="pannel-control" class="dropdown__toggle" id="user-info-dropdown">
             <label for="pannel-close"></label>
             <label class="header__user-info" for="user-info-dropdown">
@@ -221,9 +221,56 @@
         <div class="header__button">
             <label for="wallet-connect" class="button button__block button--primary ">Connect Wallet</label>
         </div>
-        <label for="navigation-drawer" class="navigation__drawer-toggle">
-            <div class="navigation__hamburger"></div>
+        <label for="navigation-drawer" class="drawer__toggle">
+            <div class="drawer__hamburger"></div>
         </label>
+        <nav class="drawer">
+            <ui class="drawer__list">
+                <li class="drawer__item dropdown">
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="exchange-dropdown-drawer">
+                    <label for="pannel-close"></label>
+                    <label class="dropdown__button" for="exchange-dropdown-drawer">
+                        <span class="text margin__right--small">Exchange</span>
+                        <i class="fas fa-caret-down"></i>
+                    </label>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="#">Tokens (TBC2)</a></li>
+                        <li class="dropdown__item"><a href="#">MiniTokens (TBC8)</a></li>
+                        <li class="dropdown__item"><a href="#">TideBit Bridge</a></li>
+                    </ul>
+                </li>
+                <li class="drawer__item dropdown">
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="wallet-dropdown-drawer">
+                    <label for="pannel-close"></label>
+                    <label class="dropdown__button" for="wallet-dropdown-drawer"><span
+                            class="text margin__right--small">Wallet</span><i class="fas fa-caret-down"></i>
+                    </label>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="#">TideBit Chain Wallet (Extension)</a></li>
+                        <li class="dropdown__item"><a href="#">Trust Wallet</a></li>
+                    </ul>
+                </li>
+                <li class="drawer__item dropdown">
+                    <input type="radio" name="pannel-control" class="dropdown__toggle" id="explorer-dropdown-drawer">
+                    <label for="pannel-close"></label>
+                    <label class="dropdown__button" for="explorer-dropdown-drawer"><span
+                            class="text margin__right--small">Explorer</span><i class="fas fa-caret-down"></i>
+                    </label>
+                    <ul class="dropdown__menu">
+                        <!-- <div class="dropdown__item--title">TideBit Chain</div> -->
+                        <li class="dropdown__item">
+                            <a href="#">TC Explorer</a>
+                        </li>
+                        <!-- <div class="dropdown__item--title">TideBit Smart Chain</div> -->
+                        <li class="dropdown__item"><a href="#">TcsScan</a></li>
+                        <li class="dropdown__item"><a href="#">TitQuery</a></li>
+                    </ul>
+                </li>
+            </ui>
+            <div class="drawer__button">
+                <label for="wallet-connect" class="button button__block button--primary ">Connect Wallet</label>
+            </div>
+        </nav>
     </header>
     <main class="margin__top--medium margin__bottom--medium">
         <section class="section">

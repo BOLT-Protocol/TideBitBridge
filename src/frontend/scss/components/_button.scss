@@ -12,12 +12,12 @@
     width: 100%;
     padding: 1.5rem 2rem;
     font-weight: 400;
-    font-size: $default-font-size * 1.1;
+    font-size: $default-font-size * 1;
   }
 
   &--text {
     color: $color-primary-light;
-    font-size: $default-font-size * 1.1;
+    font-size: $default-font-size * 1;
     padding: 0rem 1rem;
   }
   &--primary {
@@ -63,7 +63,7 @@
     background-color: rgba($color-primary-light, 0.5);
     color: $color-primary-dark;
     // width: 100%;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     border-radius: 32px;
     font-size: $default-font-size * 1;
     > a:link,

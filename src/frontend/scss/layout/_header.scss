@@ -7,12 +7,21 @@
   height: 8rem;
   position: relative;
   &__logo-box {
-    min-width: 16rem;
-    max-width: 18rem;
+    min-width: 14rem;
+    max-width: 16rem;
     margin-right: 1rem;
   }
   &__logo {
     width: 100%;
+  }
+  &__link{
+    min-width: 12rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 48rem) {
+   &__logo-box + &__link{
+      display: none;
+    }
   }
   &__button {
     max-width: 20rem;
@@ -26,6 +35,8 @@
   &__user {
     display: none;
     position: relative;
+    margin-right: 2rem;
+    min-width: 18rem;
   }
   &__user-info {
     display: flex;
@@ -56,11 +67,14 @@
       padding-left: 2.5rem;
     }
   }
+  &__user-network{
+    display: inline-block;
+  }
   #login-status:checked ~ & &__user {
     display: flex;
   }
 
-  @include respond(tab-port) {
+  @include respond(tab-land) {
     justify-content: space-between;
     &__button:nth-child(n) {
       display: none;

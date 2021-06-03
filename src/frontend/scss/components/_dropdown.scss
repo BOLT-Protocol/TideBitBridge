@@ -11,31 +11,33 @@
     display: flex;
     flex-direction: column;
     background-color: $color-white;
-    transition: all 0.25s 0.1s; 
+    transition: all 0.25s 0.1s;
     border-radius: 0.5rem;
     box-shadow: 0.5rem 0.5rem 2rem rgba($color-black, 0.15);
   }
-  &__menu{
+  &__menu {
     opacity: 0;
   }
-  &__item {
+  &__item,
+  &__item--title {
     display: none;
     opacity: 0;
   }
 
   &__toggle:checked ~ &__menu,
-  &__toggle:checked ~ &__menu > &__item {
+  &__toggle:checked ~ &__menu > &__item,
+  &__toggle:checked ~ &__menu > &__item--title {
     display: block;
     opacity: 1;
   }
 
-  .header &__menu {
+  .navigation__navbar &__menu {
     // @include absCenter;
     top: 4rem;
-    left: 15%;
+    // left: 15%;
     // transform: translate(-50%,0);
   }
-  .header &__toggle:checked ~ &__menu {
+  .navigation__navbar &__toggle:checked ~ &__menu {
     top: 6rem;
   }
   .form__card--right &__menu {
@@ -90,5 +92,4 @@
     color: $color-black;
     font-size: $default-font-size;
   }
- 
 }
