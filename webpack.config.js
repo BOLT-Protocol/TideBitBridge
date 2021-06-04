@@ -14,11 +14,11 @@ function getExternals() {
 
 const frontend = {
   mode: "none",
-  entry: path.resolve(__dirname, "src/frontend/javascript/main.js"),
+  entry: path.resolve(__dirname, "src/frontend/main.js"),
   output: {
     path: path.resolve(__dirname, "build/frontend/assets"),
-    filename: "javascript/main.js",
-    chunkFilename: "javascript/[id].js",
+    filename: "main.js",
+    chunkFilename: "[id].js",
   },
   devServer: {
     watchOptions: {

@@ -246,7 +246,10 @@ body {
   .header__link {
     min-width: 12rem;
     margin-right: 2rem; }
-  @media only screen and (max-width: 54em) {
+  @media only screen and (max-width: 75em) {
+    #login-status:checked ~ * .header__logo-box + .header__link {
+      display: none; } }
+  @media only screen and (max-width: 42em) {
     .header__logo-box + .header__link {
       display: none; } }
   .header__button {
@@ -289,10 +292,10 @@ body {
     display: inline-block; }
   #login-status:checked ~ .header .header__user {
     display: flex; }
-  @media only screen and (max-width: 54em) {
+  @media only screen and (max-width: 75em) {
     .header {
       justify-content: space-between; }
-      .header__button:nth-child(n) {
+      .header__button {
         display: none; } }
   @media only screen and (max-width: 37.5em) {
     .header__button {
@@ -474,7 +477,7 @@ body {
       display: flex;
       flex-direction: column;
       align-items: baseline; } }
-  @media only screen and (max-width: 54em) {
+  @media only screen and (max-width: 75em) {
     .drawer__button, .drawer__toggle {
       display: flex; } }
   #navigation-drawer:checked ~ * .drawer {
