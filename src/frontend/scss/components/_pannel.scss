@@ -2,28 +2,32 @@
  width: 100%;
   background-color: $color-white;
   border-radius: 10px;
+  padding: 3rem;
 
   &--main {
-    padding: 3.5rem;
-    margin-bottom: 2rem;
+    padding: 3.5rem 8rem;
+    min-height: 65rem;
+    width: 582px;
+    margin-left: 2rem;
+    margin-bottom: 0rem;
   }
-
   &--sub {
-    padding: 3.5rem;
+    width: 298px;
+    height: 60rem;
   }
-
-  @media (min-width: 48rem) {
+ 
+  @include respond(tab-land){
     &--main {
-      padding: 3.5rem 8rem;
-      min-height: 65rem;
-      width: 582px;
-      margin-left: 2rem;
-      margin-bottom: 0rem;
+      padding: 3.5rem;
+      margin-bottom: 2rem;
+      margin-left: 0rem;
+      width: 100%;
+      height: fit-content;
     }
-
     &--sub {
-      width: 298px;
-      height: 60rem;
+      width: 100%;
+      height: fit-content;
+      padding: 3.5rem;
     }
   }
 }

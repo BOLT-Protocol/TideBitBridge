@@ -21,9 +21,9 @@ html {
     font-size: 8px; //1 rem = 8px, 8/16 = 50%
   }
 
-  @include respond(big-desktop) {
-    font-size: 12px; //1rem = 12, 12/16
-  }
+  // @include respond(big-desktop) {
+  //   font-size: 12px; //1rem = 12, 12/16
+  // }
 }
 
 body {

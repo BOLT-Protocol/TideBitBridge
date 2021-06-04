@@ -53,7 +53,7 @@
     // background-color: $color-grey-light-2;
     color: $color-primary-dark;
   }
-  @media (max-width: 42rem) {
+  @include respond(tab-port) {
     &__list {
       display: flex;
       flex-direction: column;

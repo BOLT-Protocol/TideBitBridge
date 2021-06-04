@@ -2,31 +2,19 @@
   @include absCenter;
   height: 0;
   width: 0;
+  position: fixed;
 
   background-color: rgba($color-black, 0.4);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition:  opacity 0.2s 0.3s;
+  transition: opacity 0.2s 0.3s;
   align-items: center;
   justify-content: center;
   display: flex;
 
-  // @supports (
-  //   -webkit-backdrop-filter: blur(10px)) or
-  //   (backdrop-filter: blur(10px)) {
-  //   -webkit-backdrop-filter: blur(10px);
-  //   backdrop-filter: blur(10px);
-    // background-color: rgba($color-black, 0.3);
-  // }
-
   &__content {
     @include absCenter;
-    width: #{"calc(100vw - 3rem)"};
-    max-height: #{"calc(100vh - 3rem)"};
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: stretch;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 2rem;
@@ -35,18 +23,24 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
     transition: all 0.35s 0.1s;
+    height: auto;
+    width: 50vw;
+    max-height: #{"min(50rem, 75vh)"};
+    max-width: 55rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
-  @media (min-width: 48em) {
+  @include respond(tab-land) {
     &__content {
-      height: auto;
-      width: 50vw;
-      max-height: #{"min(50rem, 75vh)"};
-      max-width: 55rem;
+      width: #{"calc(100vw - 3rem)"};
+      max-height: #{"calc(100vh - 3rem)"};
     }
   }
-  #assets-selector + &  &__header {
-   border: none;
-   border-radius: 2rem;
+  #assets-selector + & &__header {
+    border: none;
+    border-radius: 2rem;
   }
 
   //Open states
@@ -91,7 +85,7 @@
   }
   &__button-box {
     background-color: $color-white;
-    padding: 2rem 2rem 3rem 2rem; 
+    padding: 2rem 2rem 3rem 2rem;
   }
   // &__button {
   //   padding: 2rem;
