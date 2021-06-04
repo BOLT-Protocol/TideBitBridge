@@ -1,0 +1,71 @@
+.radio {
+  // &__toolbar input[type="radio"] {
+  //   opacity: 0;
+  //   position: fixed;
+  //   width: 0;
+  // }
+
+  &__toolbar {
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    background-color: $color-white;
+    padding: 1rem 2rem;
+  }
+  #login-status ~ * .form &__toolbar {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  &__button-container {
+    margin: 1rem 0;
+  }
+  #login-status ~ * .form &__button-container {
+    margin: 0;
+    width: 100%;
+  }
+  #login-status ~ * .form &__button-container:not(:last-child) {
+    margin: 0 1rem 0 0;
+  }
+  &:disabled + &__button {
+    opacity: 0.4;
+    border: 1px solid transparent;
+  }
+  &:focus + &__button,
+  &:checked + &__button {
+    border: 1px solid $color-primary-light;
+    background-color: rgba($color-primary-dark, 0.3);
+  }
+  
+
+  &__button {
+    display: flex;
+    border-radius: 5px;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-grey-light-2;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid $color-primary-light;
+    }
+  }
+  &__text {
+    width: 100%;
+    font-size: $default-font-size;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icon {
+    width: 3rem;
+  }
+
+  label[for="connect-tidebit"] &__icon {
+    background-image: url(../image/tidebit_screenshot.png);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+}

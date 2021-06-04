@@ -1,0 +1,190 @@
+.form {
+  &__progress {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+  &__progress-bar {
+    margin-top: 0.5rem;
+    height: 7px;
+    border-radius: 7px;
+    width: 14rem;
+    background-color: $color-grey-light-2;
+    & span {
+      display: block;
+      border-radius: 6px;
+      height: 100%;
+      background-color: $color-primary-light;
+    }
+  }
+  &__selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-grey-light-2;
+    & i {
+      font-weight: 300;
+      font-size: $default-font-size * 0.95;
+    }
+  }
+  &__title {
+    font-size: $default-font-size;
+    color: $color-grey-dark-3;
+  }
+
+  &__hint-text {
+    align-items: center;
+    font-size: $default-font-size * 0.9;
+    color: $color-grey-dark-2;
+    font-weight: 400;
+
+    &--dark {
+      color: $color-grey-dark-3;
+    }
+  }
+  &__leading {
+    font-size: $default-font-size * 0.95;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  &__hint-text-icon {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    > img {
+      width: 100%;
+    }
+  }
+  & .button__pill {
+    font-size: $default-font-size * 0.9;
+    padding: 0.1rem 1rem;
+  }
+  &__card-container {
+    width: 100%;
+  }
+  &__container {
+    display: flex;
+    flex: content;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: $color-grey-light-2;
+    font-size: $default-font-size * 3;
+  }
+  &__input:focus {
+    border: 1px solid $color-primary-light;
+    outline: none;
+  }
+  &__button {
+    font-size: $default-font-size * 1.2;
+    margin-top: 4rem;
+  }
+  &__add-assets {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__icon-button {
+    border-radius: 5px;
+    i {
+      padding: 1rem 1rem;
+      font-size: $default-font-size;
+      font-weight: 400;
+    }
+  }
+  &__walletconnected {
+    display: flex;
+    flex-direction: column;
+  }
+  &__walletconnected-option-box {
+    border: 1px solid $color-grey-dark-2;
+    // padding: 2rem 2rem 1rem 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+  }
+  &__swap-gas-hint {
+    margin: 1rem 0;
+  }
+  &__swap-gas{
+    display: flex;
+    flex-direction: column;
+  }
+  & #swap-gas {
+    @include absCenter;
+  }
+  &__checkbox {
+    & > i {
+      font-weight: 400;
+      font-size: $default-font-size * 0.75;
+      padding: 3px;
+      border-radius: 3px;
+      border: 1px solid $color-grey-light-2;
+      background-color: $color-grey-light-1;
+    }
+  }
+  &__walletconnected-checkbox {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  &__to {
+    padding: 1rem 2rem;
+    background-color: $color-grey-light-2;
+    border-radius: 5px;
+    font-size: $default-font-size * 1;
+    display: flex;
+  }
+  &__to-icon {
+    display: flex;
+    width: 2rem;
+    margin-right: 1rem;
+    & img {
+      width: 100%;
+    }
+  }
+  &__outline-box {
+    display: flex;
+    border: 1px solid $color-primary-light;
+    align-items: flex-start;
+    background-color: rgba($color-primary-dark, 0.3);
+  }
+  &__outline-box-icon {
+    color: $color-primary-dark;
+    font-size: $default-font-size * 1.2;
+    margin-right: 1rem;
+  }
+  #swap-gas:checked
+    + &__walletconnected-option-box
+    > &__walletconnected-checkbox
+    i {
+    border: 1px solid $color-primary-dark;
+    background-color: $color-primary-dark;
+  }
+  #swap-gas:checked + &__walletconnected-option-box &__swap-gas,
+  #swap-gas:checked ~  &__swap-gas-hint--light,
+  #login-status:checked ~ * & &__add-assets,
+  #login-status ~ * & label[for="wallet-connect"],
+  #login-status:checked ~ * & &__walletconnected {
+    // @include appear;
+    display: flex;
+  }
+  #swap-gas + &__walletconnected-option-box &__swap-gas,
+  #swap-gas ~ &__swap-gas-hint--light,
+  #login-status ~ * & &__walletconnected,
+  #login-status ~ * & &__add-assets,
+  #login-status:checked ~ * & label[for="wallet-connect"],
+  #login-status:checked ~ * & &__estimate {
+    // @include disappear;
+    display: none;
+  }
+}

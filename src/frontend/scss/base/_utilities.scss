@@ -1,0 +1,32 @@
+.size-box{
+    display: block;
+    &__width--small{
+        width: 2rem;
+    }
+    &__height--small{
+        height: 2rem;
+    }
+
+    &__height--medium{
+        height: 4rem;
+    }
+
+}
+.margin__top--small{
+    margin-top: 1rem;
+}
+.margin__top--medium{
+    margin-top: 4rem;
+}
+.margin__bottom--medium{
+    margin-bottom: 4rem;
+}
+.margin__bottom--medium-small{
+    margin-bottom: 2rem;
+}
+.margin__left--small{
+    margin-left: 1rem;
+}
+.margin__right--small{
+    margin-right: 1rem;
+}

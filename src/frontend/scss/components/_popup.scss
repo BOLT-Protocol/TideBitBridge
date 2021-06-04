@@ -1,0 +1,98 @@
+.popup {
+  @include absCenter;
+  height: 0;
+  width: 0;
+  position: fixed;
+
+  background-color: rgba($color-black, 0.4);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s 0.3s;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  &__content {
+    @include absCenter;
+    align-items: stretch;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 2rem;
+    background-color: $color-grey-light-2;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.35s 0.1s;
+    height: auto;
+    width: 50vw;
+    max-height: #{"min(50rem, 75vh)"};
+    max-width: 55rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  @include respond(tab-land) {
+    &__content {
+      width: #{"calc(100vw - 3rem)"};
+      max-height: #{"calc(100vh - 3rem)"};
+    }
+  }
+  #assets-selector + & &__header {
+    border: none;
+    border-radius: 2rem;
+  }
+
+  //Open states
+  #wallet-connect:checked + &,
+  #assets-selector:checked + & {
+    height: 100vh;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #wallet-connect:checked + & > &__content,
+  #assets-selector:checked + & > &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    color: $color-black;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    & > i {
+      font-size: 2rem;
+      font-weight: 300;
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+  }
+  &__header {
+    padding: 1.5rem;
+    background-color: $color-white;
+    text-align: center;
+    border-bottom: 1px solid rgba($color-grey-dark, 0.2);
+  }
+  &__title {
+    font-size: $default-font-size * 1.2;
+  }
+  &__button-box {
+    background-color: $color-white;
+    padding: 2rem 2rem 3rem 2rem;
+  }
+  // &__button {
+  //   padding: 2rem;
+  // }
+  & .button__pill {
+    font-size: $default-font-size * 0.85;
+    padding: 0.1rem 1rem;
+    display: inline;
+  }
+}

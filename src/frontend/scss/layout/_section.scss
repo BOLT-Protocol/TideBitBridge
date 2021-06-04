@@ -1,0 +1,13 @@
+.section {
+  display: flex;
+  padding: 0rem 3rem;
+  flex-direction: row-reverse;
+  height: 100%;
+  margin: 0px auto;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include respond(tab-land){
+    flex-direction: column;
+  }
+}

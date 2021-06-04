@@ -1,0 +1,33 @@
+.pannel {
+ width: 100%;
+  background-color: $color-white;
+  border-radius: 10px;
+  padding: 3rem;
+
+  &--main {
+    padding: 3.5rem 8rem;
+    min-height: 65rem;
+    width: 582px;
+    margin-left: 2rem;
+    margin-bottom: 0rem;
+  }
+  &--sub {
+    width: 298px;
+    height: 60rem;
+  }
+ 
+  @include respond(tab-land){
+    &--main {
+      padding: 3.5rem;
+      margin-bottom: 2rem;
+      margin-left: 0rem;
+      width: 100%;
+      height: fit-content;
+    }
+    &--sub {
+      width: 100%;
+      height: fit-content;
+      padding: 3.5rem;
+    }
+  }
+}

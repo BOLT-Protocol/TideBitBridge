@@ -1,0 +1,45 @@
+.card {
+  padding: 2rem;
+  width: 100%;
+  background-color: $color-white;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 2rem rgba($color-black, 0.15);
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+    > img {
+      width: 100%;
+    }
+  }
+  &__leading {
+    font-size: $default-font-size * 0.95;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  &__button {
+    border-radius: 3px;
+    & > i {
+      display: block;
+      font-size: $default-font-size * 1;
+      padding: 1rem 1rem;
+    }
+  }
+
+  &__switch {
+    margin: 3rem 2rem 0;
+    border-radius: 5px;
+
+    & > i {
+      display: block;
+      font-size: $default-font-size * 1.2;
+      padding: 1rem 1rem;
+      font-weight: 300;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.icontile {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-grey-light-2;
+  &:hover {
+    background-color: rgba($color-primary-dark, 0.3);
+  }
+  &__leading {
+    width: 5rem;
+    & img {
+      width: 100%;
+    }
+  }
+  &__title-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title--main {
+    font-size: $default-font-size * 1.1;
+    font-weight: 400;
+  }
+  &__title--sub {
+    font-size: $default-font-size * 1;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+  }
+
+  &__suffix {
+    position: relative;
+    font-size: $default-font-size;
+    color: transparent;
+    > i {
+      font-weight: 400;
+    }
+  }
+  
+  .scrollview__radio:checked + & &__suffix i {
+    color: $color-primary-dark;
+  }
+
+  .scrollview__radio:disabled + &,
+  .scrollview__radio:disabled + &:hover {
+    opacity: 0.4;
+    background-color: $color-white;
+  }
+
+  .scrollview__radio + & &__suffix span {
+    @include absCenter;
+    width: 0;
+    opacity: 0;
+  }
+  .scrollview__radio:disabled + & &__suffix span {
+    color: $color-black;
+    font-size: $default-font-size * 0.85;
+    font-weight: 300;
+    width: 5rem;
+    opacity: 1;
+   
+  }
+}

@@ -10,6 +10,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "command-line-args": "^5.0.2",
     "dvalue": "^1.0.20",
     "ecrequest": "^1.1.5",
@@ -29,12 +30,19 @@
   "description": "Cross Chain Channel for Transfering Crypto Assets to TideBit Chain",
   "devDependencies": {
     "@babel/core": "^7.3.3",
+    "autoprefixer": "^10.2.6",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
-    "css-loader": "^2.1.0",
+    "css-loader": "^2.1.1",
+    "cssnano": "^5.0.5",
+    "file-loader": "^6.2.0",
     "koa-webpack": "^5.2.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "postcss-loader": "^5.3.0",
+    "sass-loader": "^11.1.1",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.5",
+    "webpack": "^5.38.1",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
   },
@@ -47,13 +55,14 @@
   ],
   "license": "GPLv3",
   "main": "bin/main.js",
-  "name": "TideBit Bridge",
+  "name": "tidebit-bridge",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BOLT-Protocol/TideBitBridge.git"
   },
   "scripts": {
     "dev": "webpack-dev-server --mode=development --open 'google chrome'",
+    "compile:scss": "webpack --mode=development",
     "start": "bin/main.js"
   },
   "version": "0.1.0"

@@ -1,0 +1,99 @@
+.dropdown {
+  position: relative;
+  &__button {
+    display: inline-block;
+  }
+  &__menu {
+    width: max-content;
+    min-width: 24rem;
+    position: absolute;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+    transition: all 0.25s 0.1s;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 2rem rgba($color-black, 0.15);
+  }
+  &__menu {
+    opacity: 0;
+  }
+  &__item,
+  &__item--title {
+    display: none;
+    opacity: 0;
+  }
+
+  &__toggle:checked ~ &__menu,
+  &__toggle:checked ~ &__menu > &__item,
+  &__toggle:checked ~ &__menu > &__item--title {
+    display: block;
+    opacity: 1;
+  }
+  .header__user &__menu,
+  .navigation__navbar &__menu {
+    // @include absCenter;
+    top: 4rem;
+    // left: 15%;
+    // transform: translate(-50%,0);
+  }
+  .header__user &__toggle:checked ~ &__menu,
+  .navigation__navbar &__toggle:checked ~ &__menu {
+    top: 6rem;
+  }
+  .form__card--right &__menu {
+    right: 0;
+  }
+  .form__card--left &__menu {
+    left: 70%;
+  }
+  .form__card--left &__menu,
+  .form__card--right &__menu {
+    bottom: -3rem;
+    z-index: 1;
+    min-width: 36rem;
+    @include respond(phone) {
+      min-width: calc(100vw * 0.4);
+    }
+  }
+  .form__card--left &__toggle:checked ~ &__menu,
+  .form__card--right &__toggle:checked ~ &__menu {
+    bottom: -5rem;
+  }
+  .footer &__menu {
+    right: 0%;
+    bottom: 4rem;
+  }
+  .footer &__toggle:checked ~ &__menu {
+    bottom: 6rem;
+  }
+
+  &__item {
+    padding: 1.5rem 2rem;
+    &--title {
+      color: $color-grey-dark-2;
+      font-size: $default-font-size * 0.9;
+      padding: 1.5rem 2.5rem;
+      &:nth-child(n-1) {
+        border-top: 1px solid $color-grey-light-2;
+      }
+    }
+  }
+  &__item:hover {
+    padding: 1.5rem 2rem;
+    color: $color-primary-dark;
+    background-color: rgba($color-primary-dark, 0.15);
+  }
+  &__menu &__item:hover a {
+    color: $color-primary-dark;
+  }
+  &__item,
+  &__item a,
+  &__item a:link,
+  &__item a:visited {
+    width: 100%;
+    text-decoration: none;
+    color: $color-black;
+    font-size: $default-font-size;
+  }
+}

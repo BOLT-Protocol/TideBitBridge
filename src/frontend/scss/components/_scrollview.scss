@@ -1,0 +1,41 @@
+.scrollview {
+  height: 100%;
+  overflow: auto;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  margin: 0 2rem;
+  // input[type="radio"] {
+  //   opacity: 0;
+  //   position: fixed;
+  //   width: 0;
+  // }
+  & > &__list{
+      padding: 0;
+  }
+  &__searchbar{
+      display: flex;
+      position: relative;
+      width: 100%;
+      background-color: $color-grey-light-2;
+      border-radius: 5px;
+  }
+  &__searchbar-icon{
+    @include absCenter;
+    left: 2rem;
+    font-size: $default-font-size *1.1;
+    color: $color-grey-dark;
+  }
+  &__searchbar-input{
+    display: block;
+    width: 100%;
+    border:  1px solid transparent;
+    background-color: $color-grey-light-2;
+    font-size: $default-font-size * 1.5;
+    border-radius: 5px;
+    padding: 1rem 4rem;
+    &:focus{
+        outline: none;
+        border:  1px solid $color-primary-light;
+    }
+  }
+}
