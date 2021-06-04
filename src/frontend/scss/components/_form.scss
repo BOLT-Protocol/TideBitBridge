@@ -1,4 +1,7 @@
 .form {
+  &__walletconnected-option-box{
+    display: none; // disable fuction
+  }
   &__progress {
     display: flex;
     justify-content: center;

@@ -690,6 +690,9 @@ body {
     padding: 0.1rem 1rem;
     display: inline; }
 
+.form__walletconnected-option-box {
+  display: none; }
+
 .form__progress {
   display: flex;
   justify-content: center;

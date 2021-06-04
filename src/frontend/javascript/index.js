@@ -10,19 +10,33 @@ const elements = {
   pannelClose: document.querySelector("#pannel-close"),
   loginControl: document.querySelector("#login-status"),
   userInfo: document.querySelector(".header__user .header__user-address--path"),
+  toAddress: document.querySelector(".form .form__to-address")
 };
 
-const checkLoginStatus = () => {
-  console.log(ethereum.isConnected());
-  // if (typeof window.ethereum !== "undefined" && ethereum.isConnected()) {
-  //   connectMetamask();
-  // }
-};
-
-const getOptionsOfWallet = () =>
-  document.querySelectorAll(
-    '.popup--wallet-connect input[name="connectwallet"]'
+const getBalance = async (account) => {
+  const [error, balance] = await utils.to(
+    ethereum.request({
+      method: "eth_getBalance",
+      params: [account, "latest"],
+    })
   );
+  if(error){}else{
+    console.log(balance);
+  }
+};
+
+const login = (account) => {
+  userAccount = account;
+  elements.userInfo.textContent =
+  userAccount.slice(0, 5) +
+  "..." +
+  userAccount.slice(userAccount.length - 5, userAccount.length);
+  elements.toAddress.textContent = userAccount.slice(0, 8) +
+  "..." +
+  userAccount.slice(userAccount.length - 8, userAccount.length);
+  elements.loginControl.checked = true;
+  // getBalance();
+};
 
 const requestPermissions = async () => {
   const [error, permissions] = await utils.to(
@@ -79,29 +93,12 @@ const connectMetamask = async () => {
   }
   console.log("MetaMask isn't installed!");
   return false;
-};
+}
 
-const getBalance = async (account) => {
-  const [error, balance] = await utils.to(
-    ethereum.request({
-      method: "eth_getBalance",
-      params: [account, "latest"],
-    })
+const getOptionsOfWallet = () =>
+  document.querySelectorAll(
+    '.popup--wallet-connect input[name="connectwallet"]'
   );
-  if(error){}else{
-    console.log(balance);
-  }
-};
-
-const login = (account) => {
-  userAccount = account;
-  elements.userInfo.textContent =
-  userAccount.slice(0, 5) +
-  "..." +
-  userAccount.slice(userAccount.length - 5, userAccount.length);
-  elements.loginControl.checked = true;
-  getBalance();
-};
 
 const connectWallet = async (optionsOfWallet) => {
   console.log("click connectWallet");
@@ -129,6 +126,15 @@ const connectWallet = async (optionsOfWallet) => {
   }
   return;
 };
+
+const checkLoginStatus = () => {
+  console.log(ethereum.isConnected());
+  // if (typeof window.ethereum !== "undefined" && ethereum.isConnected()) {
+  //   connectMetamask();
+  // }
+};
+
+
 // requestPermissions();
 checkLoginStatus();
 
