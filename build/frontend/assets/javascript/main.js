@@ -36,7 +36,7 @@ eval("\n\n/* eslint-disable */\nfunction normalizeUrl(pathComponents) {\n  retur
   \*************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1622775522836\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://tidebit-bridge/./src/frontend/scss/main.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1622776314366\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://tidebit-bridge/./src/frontend/scss/main.scss?");
 
 /***/ }),
 
@@ -120,7 +120,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("af066f16bf7e892eb435")
+/******/ 		__webpack_require__.h = () => ("467598ceb8d0469e3904")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

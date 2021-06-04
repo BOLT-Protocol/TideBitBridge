@@ -52,6 +52,9 @@
     bottom: -3rem;
     z-index: 1;
     min-width: 36rem;
+    @include respond(phone) {
+      min-width: calc(100vw * 0.4);
+    }
   }
   .form__card--left &__toggle:checked ~ &__menu,
   .form__card--right &__toggle:checked ~ &__menu {
