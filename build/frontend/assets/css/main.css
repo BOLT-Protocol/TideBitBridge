@@ -52,15 +52,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 html {
   font-size: 10px; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 54em) {
     html {
       font-size: 9px; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 42em) {
     html {
       font-size: 8px; } }
-  @media only screen and (min-width: 112.5em) {
-    html {
-      font-size: 12px; } }
 
 body {
   min-height: 100vh;
@@ -68,7 +65,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #eee; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 42em) {
     body {
       padding: 0; } }
 
@@ -159,15 +156,15 @@ body {
   background-color: #fff;
   width: 100%;
   display: flex;
-  flex-direction: column-reverse; }
+  justify-content: space-between;
+  flex-direction: row; }
   .footer__pannel--main {
-    margin-bottom: 4rem; }
-  @media (min-width: 48rem) {
+    margin-bottom: 0rem; }
+  @media only screen and (max-width: 54em) {
     .footer {
-      flex-direction: row;
-      justify-content: space-between; }
+      flex-direction: column-reverse; }
       .footer__pannel--main {
-        margin-bottom: 0rem; } }
+        margin-bottom: 4rem; } }
   .footer__text {
     font-size: 1.6rem; }
   .footer__button > a:link,
@@ -197,10 +194,10 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 42em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 42em) {
     .row {
       max-width: 50rem;
       padding: 0 3rem; } }
@@ -212,11 +209,11 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (max-width: 42em) {
         .row [class^="col-"]:not(:last-child) {
           margin-right: 0;
           margin-bottom: 6rem; } }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 42em) {
       .row [class^="col-"] {
         width: 100% !important; } }
   .row .col-1-of-2 {
@@ -249,7 +246,7 @@ body {
   .header__link {
     min-width: 12rem;
     margin-right: 2rem; }
-  @media (max-width: 48rem) {
+  @media only screen and (max-width: 54em) {
     .header__logo-box + .header__link {
       display: none; } }
   .header__button {
@@ -292,7 +289,7 @@ body {
     display: inline-block; }
   #login-status:checked ~ .header .header__user {
     display: flex; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 54em) {
     .header {
       justify-content: space-between; }
       .header__button:nth-child(n) {
@@ -311,7 +308,7 @@ body {
   display: flex;
   align-items: center; }
 
-@media (max-width: 42rem) {
+@media only screen and (max-width: 42em) {
   .navigation__list {
     display: none; } }
 
@@ -327,15 +324,14 @@ body {
 .section {
   display: flex;
   padding: 0rem 3rem;
-  flex-direction: column;
+  flex-direction: row-reverse;
   height: 100%;
   margin: 0px auto;
   justify-content: center;
   align-items: flex-start; }
-  @media (min-width: 48rem) {
+  @media only screen and (max-width: 54em) {
     .section {
-      flex-direction: row-reverse;
-      margin: 0px auto; } }
+      flex-direction: column; } }
 
 .button {
   border-radius: 5px;
@@ -473,12 +469,12 @@ body {
     display: none; }
   .drawer__item:hover .dropdown__button {
     color: #28b485; }
-  @media (max-width: 42rem) {
+  @media only screen and (max-width: 42em) {
     .drawer__list {
       display: flex;
       flex-direction: column;
       align-items: baseline; } }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 54em) {
     .drawer__button, .drawer__toggle {
       display: flex; } }
   #navigation-drawer:checked ~ * .drawer {
@@ -586,22 +582,28 @@ body {
 .pannel {
   width: 100%;
   background-color: #fff;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding: 3rem; }
   .pannel--main {
-    padding: 3.5rem;
-    margin-bottom: 2rem; }
+    padding: 3.5rem 8rem;
+    min-height: 65rem;
+    width: 582px;
+    margin-left: 2rem;
+    margin-bottom: 0rem; }
   .pannel--sub {
-    padding: 3.5rem; }
-  @media (min-width: 48rem) {
+    width: 298px;
+    height: 60rem; }
+  @media only screen and (max-width: 54em) {
     .pannel--main {
-      padding: 3.5rem 8rem;
-      min-height: 65rem;
-      width: 582px;
-      margin-left: 2rem;
-      margin-bottom: 0rem; }
+      padding: 3.5rem;
+      margin-bottom: 2rem;
+      margin-left: 0rem;
+      width: 100%;
+      height: fit-content; }
     .pannel--sub {
-      width: 298px;
-      height: 60rem; } }
+      width: 100%;
+      height: fit-content;
+      padding: 3.5rem; } }
 
 .popup {
   position: absolute;
@@ -610,6 +612,7 @@ body {
   transform: translate(-50%, -50%);
   height: 0;
   width: 0;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 9999;
   opacity: 0;
@@ -623,11 +626,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100vw - 3rem);
-    max-height: calc(100vh - 3rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: stretch;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
@@ -635,13 +633,18 @@ body {
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
-    transition: all 0.35s 0.1s; }
-  @media (min-width: 48em) {
+    transition: all 0.35s 0.1s;
+    height: auto;
+    width: 50vw;
+    max-height: min(50rem, 75vh);
+    max-width: 55rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+  @media only screen and (max-width: 54em) {
     .popup__content {
-      height: auto;
-      width: 50vw;
-      max-height: min(50rem, 75vh);
-      max-width: 55rem; } }
+      width: calc(100vw - 3rem);
+      max-height: calc(100vh - 3rem); } }
   #assets-selector + .popup .popup__header {
     border: none;
     border-radius: 2rem; }
