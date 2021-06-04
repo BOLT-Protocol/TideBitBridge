@@ -19,7 +19,7 @@ module.exports = {
     production: {
       user: "ubuntu",
       host: "ec2-3-34-43-9.ap-northeast-2.compute.amazonaws.com",
-      ref: "origin/feature/develop", //-- change to productions
+      ref: "origin/feature/main", //-- change to main
       repo: "https://github.com/BOLT-Protocol/TideBitBridge.git",
       path: "/etc/TideBitBridge",
       "post-deploy":
@@ -28,7 +28,7 @@ module.exports = {
     staging: {
       user: "ubuntu",
       host: "ec2-3-34-43-9.ap-northeast-2.compute.amazonaws.com",
-      ref: "origin/feature/pannel-control", //-- change to development
+      ref: "origin/feature/develop", //-- change to develop
       repo: "https://github.com/BOLT-Protocol/TideBitBridge.git",
       path: "/etc/TideBitBridge",
       "post-deploy":

@@ -62,7 +62,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode=development --open 'google chrome'",
-    "test": "webpack --mode=development",
+    "compile:scss": "webpack --mode=development",
     "start": "bin/main.js"
   },
   "version": "0.1.0"
