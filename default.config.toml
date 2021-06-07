@@ -22,3 +22,16 @@ FIREFOX_ID = "webextension@metamask.io"
 pathname = [
   "get | /,/version | Static.Utils.readPackageInfo"
 ]
+
+[blockchain.ethereum_mainnet]
+protocol = "https:"
+hostname = "rpc.tidewallet.io"
+port = 443
+path = "/"
+
+
+[blockchain.ethereum_ropsten]
+protocol = "https:"
+hostname = " ropsten.tidewallet.io"
+port = 443
+path = "/"

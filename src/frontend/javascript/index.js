@@ -2,6 +2,68 @@ import * as rpc from "./utils/rpc.js";
 import * as utils from "./utils/utils.js";
 
 let userAccount;
+let selectedAsset = 2; // index
+
+const assets = [
+  {
+    symbol: "BTC",
+    name: "Bitcoin",
+    network: "mainnet",
+    available: true,
+    icon: "https://www.tidebit.one/icons/btc.png",
+  },
+  {
+    symbol: "ETH",
+    name: "Ethereum",
+    network: "mainnet",
+    available: true,
+    icon: "https://www.tidebit.one/icons/eth.png",
+  },
+  {
+    symbol: "ETH",
+    name: "Ethereum",
+    network: "ropsten",
+    available: true,
+    icon: "https://www.tidebit.one/icons/eth.png",
+  },
+  {
+    symbol: "BCH",
+    name: "Bitcoin Cash",
+    network: "mainnet",
+    available: false,
+    icon: "https://www.tidebit.one/icons/bch.png",
+  },
+  {
+    symbol: "USDT",
+    name: "TetherUS",
+    network: "mainnet",
+    available: false,
+    icon: "https://www.tidebit.one/icons/usdt.png",
+  },
+];
+
+const scrollViewItem = (asset, i) => {
+  const markup = `
+  <li class="scrollview__item">
+    <input type="radio" name="assets-list" id="assets-${asset.symbol.toLowerCase()}" class="scrollview__radio" ${
+    asset.available ? (i === selectedAsset ? "checked" : "enabled") : "disabled"
+  }>
+    <label class="icontile" for="assets-${asset.symbol.toLowerCase()}">
+      <div class="icontile__leading margin__right--small">
+        <img src=${asset.icon} alt=${asset.symbol} class="icontile__icon">
+      </div>
+      <div class="icontile__title-box">
+        <div class="icontile__title--main">${asset.symbol}</div>
+        <div class="icontile__title--sub">${
+          asset.name + " " + asset.network
+        }</div>
+      </div>
+      <div class="icontile__suffix"><i class="fas fa-check"></i></div>
+    </label>
+  </li>
+  `;
+  return markup;
+};
 
 const elements = {
   connectWalletButton: document.querySelector(
@@ -10,32 +72,65 @@ const elements = {
   pannelClose: document.querySelector("#pannel-close"),
   loginControl: document.querySelector("#login-status"),
   userInfo: document.querySelector(".header__user .header__user-address--path"),
-  toAddress: document.querySelector(".form .form__to-address")
+  toAddress: document.querySelector(".form .form__to-address"),
+  scrollViewList: document.querySelector(".scrollview__list"),
+  selectedAssetLabel: document.querySelector("label[for='assets-selector']"),
 };
 
-const getBalance = async (account) => {
-  const [error, balance] = await utils.to(
-    ethereum.request({
-      method: "eth_getBalance",
-      params: [account, "latest"],
-    })
+const listScrollView = () => {
+  // will move to somewhere else
+  elements.selectedAssetLabel = assets[selectedAsset].symbol.toUpperCase();
+  elements.scrollViewList.replaceChildren();
+  assets.forEach((asset, i) =>
+    elements.scrollViewList.insertAdjacentHTML(
+      "beforeend",
+      scrollViewItem(asset, i)
+    )
   );
-  if(error){}else{
+};
+
+const getBalance = async (asset, account) => {
+  const opts = {};
+  opts.headers = { "content-type": "application/json" };
+  opts.method = "POST";
+  switch (asset.network.toLowerCase()) {
+    case "ropsten":
+      opts.url = "https://ropsten.tidewallet.io";
+      break;
+    case "ethereum":
+      opts.url = "https://rpc.tidewallet.io";
+      break;
+    default:
+      opts.url = "https://ropsten.tidewallet.io";
+      break;
+  }
+  opts.payload = `{
+    "jsonrpc":"2.0",
+    "method":"eth_getBalance",
+    "params":["${account}","latest"],
+    "id": "${utils.randomID()}"
+  }`;
+  const [error, resultObj] = await utils.to(utils.request(opts));
+  if (error) {
+  } else {
+    const balance = resultObj.result;
     console.log(balance);
+    console.log(parseInt(balance));
   }
 };
 
 const login = (account) => {
   userAccount = account;
   elements.userInfo.textContent =
-  userAccount.slice(0, 5) +
-  "..." +
-  userAccount.slice(userAccount.length - 5, userAccount.length);
-  elements.toAddress.textContent = userAccount.slice(0, 8) +
-  "..." +
-  userAccount.slice(userAccount.length - 8, userAccount.length);
+    userAccount.slice(0, 5) +
+    "..." +
+    userAccount.slice(userAccount.length - 5, userAccount.length);
+  elements.toAddress.textContent =
+    userAccount.slice(0, 8) +
+    "..." +
+    userAccount.slice(userAccount.length - 8, userAccount.length);
   elements.loginControl.checked = true;
-  // getBalance();
+  getBalance(assets[selectedAsset], account);
 };
 
 const requestPermissions = async () => {
@@ -93,7 +188,7 @@ const connectMetamask = async () => {
   }
   console.log("MetaMask isn't installed!");
   return false;
-}
+};
 
 const getOptionsOfWallet = () =>
   document.querySelectorAll(
@@ -134,10 +229,9 @@ const checkLoginStatus = () => {
   // }
 };
 
-
 // requestPermissions();
 checkLoginStatus();
-
+listScrollView();
 ethereum.on("accountsChanged", (accounts) => {
   // Handle the new accounts, or lack thereof.
   console.log(accounts);
@@ -146,3 +240,7 @@ ethereum.on("accountsChanged", (accounts) => {
 elements.connectWalletButton.addEventListener("click", () =>
   connectWallet(getOptionsOfWallet())
 );
+
+elements.scrollViewList.addEventListener("click", () => {
+  console.log("click");
+});
