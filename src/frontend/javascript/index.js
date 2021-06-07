@@ -44,11 +44,15 @@ const assets = [
 
 const scrollViewItem = (asset, i) => {
   const markup = `
-  <li class="scrollview__item">
-    <input type="radio" name="assets-list" id="assets-${asset.symbol.toLowerCase()}" class="scrollview__radio" ${
+  <li index=${i} class="scrollview__item">
+    <input type="radio" name="assets-list" id="assets-${(
+      asset.symbol + asset.network
+    ).toLowerCase()}" class="scrollview__radio" ${
     asset.available ? (i === selectedAsset ? "checked" : "enabled") : "disabled"
   }>
-    <label class="icontile" for="assets-${asset.symbol.toLowerCase()}">
+    <label class="icontile" for="assets-${(
+      asset.symbol + asset.network
+    ).toLowerCase()}">
       <div class="icontile__leading margin__right--small">
         <img src=${asset.icon} alt=${asset.symbol} class="icontile__icon">
       </div>
@@ -89,6 +93,10 @@ const listScrollView = () => {
   );
 };
 
+const changeSelectedAsset = () => {
+  elements.selectedAssetLabel = assets[selectedAsset].symbol.toUpperCase();
+};
+
 const getBalance = async (asset, account) => {
   const opts = {};
   opts.headers = { "content-type": "application/json" };
@@ -113,9 +121,10 @@ const getBalance = async (asset, account) => {
   const [error, resultObj] = await utils.to(utils.request(opts));
   if (error) {
   } else {
-    const balance = resultObj.result;
+    const balance = parseInt(resultObj.result) / Math.pow(10, 18);
     console.log(balance);
-    console.log(parseInt(balance));
+    document.querySelector(".form__walletconnected-amount").textContent =
+      balance + " " + assets[selectedAsset].symbol;
   }
 };
 
@@ -241,6 +250,8 @@ elements.connectWalletButton.addEventListener("click", () =>
   connectWallet(getOptionsOfWallet())
 );
 
-elements.scrollViewList.addEventListener("click", () => {
-  console.log("click");
+elements.scrollViewList.addEventListener("click", (el) => {
+  selectedAsset = el.target.parentNode.attributes.index.value;
+  getBalance(assets[selectedAsset], account);
+  console.log("selectedAsset", selectedAsset);
 });

@@ -55,3 +55,10 @@ export const request = (opts) => {
     }
   });
 };
+
+export const toEther = (amount,unit) => {
+  switch(unit){
+    case "wei":
+      
+  }
+};
