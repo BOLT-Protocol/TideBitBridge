@@ -210,7 +210,7 @@
                     <span class="header__user-address--icon">
                         <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="metamask">
                     </span>
-                    <span class="header__user-address--path">0x88e...80dad</span>
+                    <span class="header__user-address--path"></span>
                 </span>
                 <span class="header__user-network">Ethereum Network</span>
             </label>
@@ -278,7 +278,7 @@
                 <!-- <label for="login-status" class="form"> -->
                 <div class="form">
                     <div class="form__progress form__hint-text">
-                        <div class="form__progress-text">Daily limit ? per address (? / ?)</div>
+                        <div class="form__progress-text">Daily limit <span class="daily__limit">?</span> per address (<span class="daily__total-sent">?</span> / <span class="daily__limit">?</span> )</div>
                         <div class="form__progress-bar"><span style="width: 33.3%"></span></div>
                     </div>
                     <div class="form__title">Assets</div>
@@ -346,13 +346,19 @@
                     <div class="size-box size-box__height--medium"></div>
                     <div class="form__title">Amount</div>
                     <input type="number" class="form__input" id="amount">
-                    <div class="form__hint-text form__hint-text--dark form__estimate margin__top--small">You will
-                        receive
-                        ≈ <span class="form__hint-text-icon margin__right--small"><img
-                                src="https://www.tidebit.one/icons/eth.png" alt="coin_icon"></span><span
-                            class="form__hint-text--amount">0 ETH</span><span
-                            class="button__pill margin__left--small">BEP
-                            20</span></div>
+                    <div class="form__hint-text form__hint-text--dark form__estimate margin__top--small">
+                        You will receive ≈ 
+                        <span class="form__hint-text-icon margin__right--small">
+                            <img src="https://www.tidebit.one/icons/eth.png" alt="coin_icon">
+                        </span>
+                        <span class="form__hint-text--amount">
+                            0
+                            <span class="form__hint-text--unit">ETH</span>
+                        </span>
+                        <span class="button__pill margin__left--small">BEP
+                            20
+                        </span>
+                    </div>
                     <div class="form__walletconnected">
                         <div class="form__walletconnected-amount-box form__hint-text">Available: <span
                                 class="form__walletconnected-amount">0
@@ -401,7 +407,7 @@
                             <span class="form__to-icon">
                                 <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="metamask">
                             </span>
-                            <span class="form__to-address">0x88e3bB...29480dad</span>
+                            <span class="form__to-address"></span>
                         </div>
                         <div class="form__hint-text">This is the destination address of the To network</div>
                         <div class="form__outline-box margin__top--medium button button button__block">
@@ -414,8 +420,8 @@
                             <div class="form__outline-box-icon"><i class="fas fa-info-circle"></i></div>
                             <div class="form__outline-box-title">
                                 <div class="form__title">Reminder</div>
-                                <div class="form__hint-text form__amount-minimum">1. The minimum amount is 110 ETH</div>
-                                <div class="form__hint-text form__amount-maximumn">2. The maximum amount is 10000 USDT
+                                <div class="form__hint-text form__amount-minimum">1. The minimum amount is <span>110 ETH</span></div>
+                                <div class="form__hint-text form__amount-maximumn">2. The maximum amount is <span>110 ETH</span>
                                 </div>
                             </div>
                         </div>

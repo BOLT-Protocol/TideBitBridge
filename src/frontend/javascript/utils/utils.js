@@ -56,9 +56,20 @@ export const request = (opts) => {
   });
 };
 
-export const toEther = (amount,unit) => {
-  switch(unit){
+export const toEther = (amount, unit) => {
+  switch (unit) {
     case "wei":
-      
+      return amount / Math.pow(10, 18);
+    case "gwei":
+      return amount / Math.pow(10, 9);
+  }
+};
+
+export const toWei = (amount, unit) => {
+  switch (unit) {
+    case "ether":
+      return amount * Math.pow(10, 18);
+    case "gwei":
+      return amount * Math.pow(10, 9);
   }
 };
