@@ -270,11 +270,13 @@ const sendTransactionByMetamask = async () => {
       params: [
         {
           from: userAccount,
-          to: "0xAdE7126134BB1beEde5662e208cCC0147dEE0BFE",
+          to: "0x113461E94e790Cf247802cac2399CD206c60597F",
           gas: "0x76c0", // 30400
           gasPrice: await getGasPrice(), //"0x9184e72a000", // 10000000000000
-          value: "0x9184e72a", // 2441406250
-          data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
+          value: utils.bnToHex(
+            utils.toWei(parseFloat(elements.inputAmount.value), "ether")
+          ), // 2441406250
+          data: "", //"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
         },
       ],
     })
@@ -388,9 +390,7 @@ elements.scrollViewList.addEventListener("click", async (el) => {
   }
 });
 elements.nextButton.addEventListener("click", async () => {
-  const amount = utils.toWei(parseFloat(elements.inputAmount.value));
-  console.log(amount);
-  // sendTransactionByMetamask();
+  sendTransactionByMetamask();
 });
 
 // requestPermissions();

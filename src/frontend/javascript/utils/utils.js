@@ -73,3 +73,34 @@ export const toWei = (amount, unit) => {
       return amount * Math.pow(10, 9);
   }
 };
+
+export const bnToHex = (bn) => {
+  let pos = true;
+  bn = BigInt(bn);
+
+  // I've noticed that for some operations BigInts can
+  // only be compared to other BigInts (even small ones).
+  // However, <, >, and == allow mix and match
+  if (bn < 0) {
+    pos = false;
+    bn = bitnot(bn);
+  }
+
+  var base = 16;
+  var hex = bn.toString(base);
+  if (hex.length % 2) {
+    hex = "0x0" + hex;
+  }
+
+  // Check the high byte _after_ proper hex padding
+  var highbyte = parseInt(hex.slice(0, 2), 16);
+  var highbit = 0x80 & highbyte;
+
+  if (pos && highbit) {
+    // A 32-byte positive integer _may_ be
+    // represented in memory as 33 bytes if needed
+    hex = "0x" + hex;
+  }
+
+  return hex;
+};
