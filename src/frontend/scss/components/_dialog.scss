@@ -61,7 +61,12 @@ $cross-offset: ($check-height / $sin45) - $check-height;
       position: absolute;
     }
   }
-  + .popup__hint-text > div{
+  + .popup__hint-text > div {
+    color: $brand-success;
+  }
+  + * a,
+  + * a:link,
+  + * a:visited {
     color: $brand-success;
   }
 }
@@ -116,7 +121,7 @@ $cross-offset: ($check-height / $sin45) - $check-height;
       top: calc(#{$cross-offset} - #{($symbol-thickness) / $sin45});
     }
   }
-  + .popup__hint-text > div{
+  + .popup__hint-text > div {
     color: $brand-failure;
   }
 }

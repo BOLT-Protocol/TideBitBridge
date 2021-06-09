@@ -1048,6 +1048,10 @@ label[for="connect-tidebit"] .radio__icon {
     position: absolute; }
   .success + .popup__hint-text > div {
     color: #5cb85c; }
+  .success + * a,
+  .success + * a:link,
+  .success + * a:visited {
+    color: #5cb85c; }
 
 .failed {
   -webkit-animation: none;
