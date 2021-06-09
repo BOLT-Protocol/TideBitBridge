@@ -10,6 +10,7 @@ const assets = _assets.assets.map((_asset) => ({ ..._asset }));
 
 let userAccount;
 let selectedAsset = 2; // index
+let chainId;
 
 const listScrollView = () => {
   let asset = assets[selectedAsset];
@@ -70,6 +71,10 @@ const connectWallet = async () => {
         const account = await metamask.connect();
         if (account) {
           userAccount = account;
+          // ++ TODO
+          const _chainId = await metamask.getChainId();
+          console.log(_chainId);
+          if (_chainId) chainId = _chainId;
           await updateSelectedAsset(true);
         }
         break;
@@ -94,11 +99,48 @@ elements.scrollViewList.addEventListener("click", async (el) => {
   }
 });
 elements.nextButton.addEventListener("click", async () => {
-  metamask.sendTransaction(userAccount, elements.inputAmount.value, assets[selectedAsset]);
+  const [error, result] = await metamask.sendTransaction(
+    userAccount,
+    elements.inputAmount.value,
+    assets[selectedAsset]
+  );
+  if (error) {
+    console.log(error);
+    elements.alertDialog.checked = true;
+    elements.dialogContent.classList.remove("success");
+    elements.dialogContent.classList.add("failed");
+    elements.dialogHintText.textContent = "Transaction Failed";
+  } else {
+    console.log(result);
+    elements.alertDialog.checked = true;
+    elements.dialogContent.classList.remove("failed");
+    elements.dialogContent.classList.add("success");
+    elements.dialogHintText.textContent = "Transaction Success";
+  }
+});
+
+ethereum.on("accountsChanged", (accounts) => {
+  window.location.reload();
+  // Handle the new accounts, or lack thereof.
+  console.log(accounts);
+});
+
+ethereum.on("chainChanged", (_chainId) => {
+  console.log(_chainId);
+  chainId = _chainId;
+  // We recommend reloading the page, unless you must do otherwise
+  // window.location.reload();
 });
 
 listScrollView();
 
 (() => {
-  console.log(rlp.encode([]));
+  const data = rlp.encode("0xd86b75c7");
+  // console.log(data);
+  // console.log(data.toString("hex"));
+  // console.log(rlp.encode([]));
+  // elements.alertDialog.checked = true;
+  // elements.dialogContent.classList.remove("failed");
+  // elements.dialogContent.classList.add("success");
+  // elements.dialogHintText.textContent = "Transaction Success";
 })();

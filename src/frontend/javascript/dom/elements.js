@@ -16,3 +16,6 @@ export const dailyLimit = document.querySelectorAll(".daily__limit");
 export const totalSent = document.querySelector(".daily__total-sent");
 export const inputAmount = document.querySelector("#amount");
 export const nextButton = document.querySelector(".form .form__button");
+export const alertDialog = document.querySelector("#alert-dialog");
+export const dialogContent = document.querySelector(".popup--alert .circle-loader");
+export const dialogHintText = document.querySelector(".popup--alert .popup__hint-text div");
