@@ -106,18 +106,25 @@ elements.nextButton.addEventListener("click", async () => {
   );
   if (error) {
     console.log(error);
-    elements.alertDialog.checked = true;
+    elements.alertDialogButton.checked = true;
     elements.dialogContent.classList.remove("success");
     elements.dialogContent.classList.add("failed");
     elements.dialogHintText.textContent = "Transaction Failed";
   } else {
     console.log(result);
-    elements.alertDialog.checked = true;
+    elements.alertDialogButton.checked = true;
     elements.dialogContent.classList.remove("failed");
     elements.dialogContent.classList.add("success");
     elements.dialogHintText.textContent = "Transaction Success";
-    elements.dialogHintTextBox.insertAdjacentHTML('afterend', `<a class=".title" href="https://${assets[selectedAsset].network}.etherscan.io/tx/${result}">${result}</div>`);
+    elements.dialogHintTextBox.insertAdjacentHTML(
+      "afterend",
+      `<a class=".title" href="https://${assets[selectedAsset].network}.etherscan.io/tx/${result}">${result}</div>`
+    );
   }
+});
+
+elements.alertDialog.addEventListener("click", () => {
+  elements.pannelClose.checked = true;
 });
 
 ethereum.on("accountsChanged", (accounts) => {
@@ -140,7 +147,7 @@ listScrollView();
   // console.log(data);
   // console.log(data.toString("hex"));
   // console.log(rlp.encode([]));
-  // elements.alertDialog.checked = true;
+  // elements.alertDialogButton.checked = true;
   // elements.dialogContent.classList.remove("failed");
   // elements.dialogContent.classList.add("success");
   // elements.dialogHintText.textContent = "Transaction Success";
