@@ -94,7 +94,7 @@ elements.scrollViewList.addEventListener("click", async (el) => {
   }
 });
 elements.nextButton.addEventListener("click", async () => {
-  metamask.sendTransaction();
+  metamask.sendTransaction(userAccount, elements.inputAmount.value, assets[selectedAsset]);
 });
 
 listScrollView();

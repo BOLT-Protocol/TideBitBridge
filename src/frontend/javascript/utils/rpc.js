@@ -2,6 +2,10 @@ const utils = require("./utils");
 const node = require("../constant/node");
 
 const jsonRPC = (method, asset, account) => {
+  console.log("method", method);
+  console.log("asset", asset);
+  console.log("account", account);
+
   const opts = {};
   opts.headers = { "content-type": "application/json" };
   opts.method = "POST";
@@ -56,9 +60,9 @@ const estimateGas = async (txHex) => {
     return estimateGas;
   }
 };
-const getGasPrice = async () => {
+const getGasPrice = async (asset) => {
   const [error, resultObj] = await utils.to(
-    utils.request(jsonRPC("eth_gasPrice"))
+    utils.request(jsonRPC("eth_gasPrice", asset))
   );
   if (error) {
     console.log(error);

@@ -1,4 +1,6 @@
 const utils = require("./utils");
+const rpc = require("./rpc");
+
 
 const requestPermissions = async () => {
   const [error, permissions] = await utils.to(
@@ -31,18 +33,18 @@ const checkLoginStatus = () => {
   // }
 };
 
-const sendTransaction = async () => {
+const sendTransaction = async (account, amount, asset) => {
   const [error, result] = await utils.to(
     ethereum.request({
       method: "eth_sendTransaction",
       params: [
         {
-          from: userAccount,
+          from: account,
           to: "0x113461E94e790Cf247802cac2399CD206c60597F",
           gas: "0x76c0", // 30400
-          gasPrice: await getGasPrice(), //"0x9184e72a000", // 10000000000000
+          gasPrice: await rpc.getGasPrice(asset), //"0x9184e72a000", // 10000000000000
           value: utils.bnToHex(
-            utils.toWei(parseFloat(elements.inputAmount.value), "ether")
+            utils.toWei(parseFloat(amount), "ether")
           ), // 2441406250
           data: "", //"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
         },
