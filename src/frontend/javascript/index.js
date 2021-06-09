@@ -118,7 +118,7 @@ elements.nextButton.addEventListener("click", async () => {
     elements.dialogHintText.textContent = "Transaction Success";
     elements.dialogHintTextBox.insertAdjacentHTML(
       "afterend",
-      `<a class=".title" href="https://${assets[selectedAsset].network}.etherscan.io/tx/${result}">${result}</div>`
+      `<a class=".title" href="https://${assets[selectedAsset].network}.etherscan.io/tx/${result}" target="_blank">${result}</div>`
     );
   }
 });
@@ -147,9 +147,9 @@ listScrollView();
   // console.log(data);
   // console.log(data.toString("hex"));
   // console.log(rlp.encode([]));
-  // elements.alertDialogButton.checked = true;
-  // elements.dialogContent.classList.remove("failed");
-  // elements.dialogContent.classList.add("success");
-  // elements.dialogHintText.textContent = "Transaction Success";
-  // elements.dialogHintTextBox.insertAdjacentHTML('afterend', `<a class=".title" href="">0x5586821402ab166129c2b865b3b1f9c4bbc6c49450305135c3784ff209c2d093</div>`);
+  elements.alertDialogButton.checked = true;
+  elements.dialogContent.classList.remove("failed");
+  elements.dialogContent.classList.add("success");
+  elements.dialogHintText.textContent = "Transaction Success";
+  elements.dialogHintTextBox.insertAdjacentHTML('afterend', `<a class=".title" href="https://ropsten.etherscan.io/tx/0x5586821402ab166129c2b865b3b1f9c4bbc6c49450305135c3784ff209c2d093" target="_blank">0x5586821402ab166129c2b865b3b1f9c4bbc6c49450305135c3784ff209c2d093</div>`);
 })();
