@@ -73,6 +73,19 @@ export const toWei = (amount, unit) => {
       return amount * Math.pow(10, 9);
   }
 };
+const bitnot =(bn) =>{
+  bn = -bn;
+  var bin = (bn).toString(2)
+  var prefix = '';
+  while (bin.length % 8) { bin = '0' + bin; }
+  if ('1' === bin[0] && -1 !== bin.slice(1).indexOf('1')) {
+    prefix = '11111111';
+  }
+  bin = bin.split('').map(function (i) {
+    return '0' === i ? '1' : '0';
+  }).join('');
+  return BigInt('0b' + prefix + bin) + BigInt(1);
+}
 
 export const bnToHex = (bn) => {
   let pos = true;

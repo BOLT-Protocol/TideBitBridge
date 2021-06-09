@@ -1,6 +1,7 @@
-import * as rpc from "./utils/rpc.js";
 import * as utils from "./utils/utils.js";
 
+// import * as rlp from "./utils/rlp.js";
+// import { rlp } from "ethereumjs-util";
 const elements = {
   connectWalletButton: document.querySelector(
     ".popup--wallet-connect .popup__button"
@@ -165,6 +166,16 @@ const jsonRPC = (method, transactionHex) => {
       break;
   }
   return opts;
+};
+
+const encodeMessage = (message, amount) => {
+  const encodedMessage =
+    "0x" +
+    // pack("erc20Func") +//-- 錯的
+    userAccount?.slice(2) +
+    utils.bnToHex(utils.toWei(amount, "ether")).slice(2) +
+    (!message ? "" : encodeURI(message).toString("hex"));
+  return encodedMessage;
 };
 
 const getEstimateGas = async (txHex) => {
@@ -396,3 +407,8 @@ elements.nextButton.addEventListener("click", async () => {
 // requestPermissions();
 checkLoginStatus();
 listScrollView();
+
+(() => {
+  console.log(window.rlp.encode([]));
+  console.log(encodeMessage("", 0.00001));
+})();
