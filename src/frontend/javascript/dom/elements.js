@@ -19,3 +19,4 @@ export const nextButton = document.querySelector(".form .form__button");
 export const alertDialog = document.querySelector("#alert-dialog");
 export const dialogContent = document.querySelector(".popup--alert .circle-loader");
 export const dialogHintText = document.querySelector(".popup--alert .popup__hint-text div");
+export const dialogHintTextBox = document.querySelector(".popup--alert .popup__hint-text div");
