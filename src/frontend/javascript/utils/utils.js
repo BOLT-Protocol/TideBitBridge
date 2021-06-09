@@ -117,3 +117,13 @@ export const bnToHex = (bn) => {
 
   return hex;
 };
+
+export const encodeMessage = (message, amount) => {
+  const encodedMessage =
+    "0x" +
+    // pack("erc20Func") +//-- 錯的
+    userAccount?.slice(2) +
+    utils.bnToHex(utils.toWei(amount, "ether")).slice(2) +
+    (!message ? "" : encodeURI(message).toString("hex"));
+  return encodedMessage;
+};
