@@ -17,7 +17,7 @@ const frontend = {
   entry: path.resolve(__dirname, "src/frontend/main.js"),
   output: {
     path: path.resolve(__dirname, "build/frontend/assets"),
-    filename: "main.js",
+    filename: "javascript/bundle.js",
     chunkFilename: "[id].js",
   },
   devServer: {
@@ -28,6 +28,7 @@ const frontend = {
     compress: true,
     port: 9000,
   },
+
   module: {
     rules: [
       {
@@ -55,6 +56,9 @@ const frontend = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtractPlugin({
       filename: devMode ? "css/[name].css" : "css/[name].[contenthash].css",

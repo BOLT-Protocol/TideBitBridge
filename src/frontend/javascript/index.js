@@ -1,7 +1,7 @@
 import * as utils from "./utils/utils.js";
 
-// import * as rlp from "./utils/rlp.js";
-// import { rlp } from "ethereumjs-util";
+import * as rlp from "rlp";
+
 const elements = {
   connectWalletButton: document.querySelector(
     ".popup--wallet-connect .popup__button"
@@ -409,6 +409,5 @@ checkLoginStatus();
 listScrollView();
 
 (() => {
-  console.log(window.rlp.encode([]));
-  console.log(encodeMessage("", 0.00001));
+  console.log(rlp.encode([]));
 })();
