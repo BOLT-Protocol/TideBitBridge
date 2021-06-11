@@ -60,7 +60,7 @@
       align-items: baseline;
     }
   }
-  @include respond(tab-land) {
+  @include respond(small-desktop) {
     &__button,
     &__toggle {
       display: flex;

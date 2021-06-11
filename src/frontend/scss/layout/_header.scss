@@ -14,12 +14,18 @@
   &__logo {
     width: 100%;
   }
-  &__link{
+  &__link {
     min-width: 12rem;
     margin-right: 2rem;
   }
- @include respond(tab-land) {
-   &__logo-box + &__link{
+
+  @include respond(small-desktop) {
+    #login-status:checked ~ * &__logo-box + &__link {
+      display: none;
+    }
+  }
+  @include respond(tab-port) {
+    &__logo-box + &__link {
       display: none;
     }
   }
@@ -67,16 +73,16 @@
       padding-left: 2.5rem;
     }
   }
-  &__user-network{
+  &__user-network {
     display: inline-block;
   }
   #login-status:checked ~ & &__user {
     display: flex;
   }
 
-  @include respond(tab-land) {
+  @include respond(small-desktop) {
     justify-content: space-between;
-    &__button:nth-child(n) {
+    &__button {
       display: none;
     }
   }

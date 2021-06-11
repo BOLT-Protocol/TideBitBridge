@@ -1,0 +1,2 @@
+export const CROSS_CHAIN_CHANNEL = '0xc72c4102da25b3a84d8e892fcce7a74c2f3588f0';
+

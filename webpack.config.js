@@ -14,11 +14,11 @@ function getExternals() {
 
 const frontend = {
   mode: "none",
-  entry: path.resolve(__dirname, "src/frontend/javascript/main.js"),
+  entry: path.resolve(__dirname, "src/frontend/main.js"),
   output: {
     path: path.resolve(__dirname, "build/frontend/assets"),
-    filename: "javascript/main.js",
-    chunkFilename: "javascript/[id].js",
+    filename: "javascript/bundle.js",
+    chunkFilename: "[id].js",
   },
   devServer: {
     watchOptions: {
@@ -28,6 +28,7 @@ const frontend = {
     compress: true,
     port: 9000,
   },
+
   module: {
     rules: [
       {
@@ -55,6 +56,9 @@ const frontend = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtractPlugin({
       filename: devMode ? "css/[name].css" : "css/[name].[contenthash].css",

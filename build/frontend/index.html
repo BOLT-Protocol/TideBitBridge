@@ -35,7 +35,7 @@
             <div class="scrollview">
                 <ul class="scrollview__list">
                     <li class="scrollview__item">
-                        <input type="radio" name="assets-list" id="assets-btc" class="scrollview__radio">
+                        <input type="radio" name="assets-list" id="assets-btc" class="scrollview__radio" disabled>
                         <label class="icontile" for="assets-btc">
                             <div class="icontile__leading margin__right--small">
                                 <img src="https://www.tidebit.one/icons/btc.png" alt="BTC" class="icontile__icon">
@@ -104,7 +104,7 @@
         </div>
     </div>
     <input type="radio" name="pannel-control" id="wallet-connect">
-    <div class="popup">
+    <div class="popup popup--wallet-connect">
         <div class="popup__content">
             <div class="popup__header">
                 <div class="popup__title">Wallet Connect</div>
@@ -112,24 +112,24 @@
             </div>
             <div class="radio__toolbar">
                 <div class="radio__button-container">
-                    <input class="radio" type="radio" name="connectwallet" id="connect-metamask">
-                    <label class="radio__button" for="connect-metamask">
+                    <input class="radio" type="radio" name="connectwallet" id="metamask">
+                    <label class="radio__button" for="metamask">
                         <span class="radio__text">MetaMask</span>
                         <img class="radio__icon" src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg"
                             alt="MetaMask">
                     </label>
                 </div>
                 <div class="radio__button-container">
-                    <input class="radio" type="radio" name="connectwallet" id="connect-tidebit">
-                    <label class="radio__button" for="connect-tidebit">
+                    <input class="radio" type="radio" name="connectwallet" id="tidebit">
+                    <label class="radio__button" for="tidebit">
                         <span class="radio__text">TideBitChain</span>
                         <span class="radio__icon"></span>
                         <!-- <img src="https://www.tidebit.one/favicon.ico" alt="TideBit"> -->
                 </div>
                 <div class="radio__button-container disable">
                     </label>
-                    <input class="radio" type="radio" name="connectwallet" id="connect-walletconnect" disabled>
-                    <label class="radio__button " for="connect-walletconnect">
+                    <input class="radio" type="radio" name="connectwallet" id="walletconnect" disabled>
+                    <label class="radio__button " for="walletconnect">
                         <span class="radio__text">
                             <span>WalletConnect</span>
                             <span class="button__pill margin__right--small">Coming Soon</span>
@@ -140,12 +140,24 @@
                 </div>
             </div>
             <div class="popup__button-box">
-                <label for="login-status" class="popup__button">
-                    <div class="button button__block button--primary">Wallet Connect</div>
-                </label>
+                <div class="popup__button">
+                    <div class="button button__block button--primary ">Wallet Connect</div>
+                </div>
             </div>
         </div>
 
+    </div>
+    <input type="radio" name="pannel-control" id="alert-dialog">
+    <div class="popup popup--alert">
+        <div class="popup__content">
+            <label for="pannel-close" class="popup__close button--grey"><i class="fas fa-times"></i></label>
+            <div class="circle-loader success">
+                <div class="status draw"></div>
+            </div>
+            <div class="popup__hint-text">
+                <div class="heading__primary"></div>
+            </div>
+        </div>
     </div>
     <header class="header">
         <div class="header__logo-box">
@@ -210,7 +222,7 @@
                     <span class="header__user-address--icon">
                         <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="metamask">
                     </span>
-                    <span class="header__user-address--path">0x88e...80dad</span>
+                    <span class="header__user-address--path"></span>
                 </span>
                 <span class="header__user-network">Ethereum Network</span>
             </label>
@@ -278,7 +290,8 @@
                 <!-- <label for="login-status" class="form"> -->
                 <div class="form">
                     <div class="form__progress form__hint-text">
-                        <div class="form__progress-text">Daily limit ? per address (? / ?)</div>
+                        <div class="form__progress-text">Daily limit <span class="daily__limit">?</span> per address
+                            (<span class="daily__total-sent">?</span> / <span class="daily__limit">?</span> )</div>
                         <div class="form__progress-bar"><span style="width: 33.3%"></span></div>
                     </div>
                     <div class="form__title">Assets</div>
@@ -346,13 +359,19 @@
                     <div class="size-box size-box__height--medium"></div>
                     <div class="form__title">Amount</div>
                     <input type="number" class="form__input" id="amount">
-                    <div class="form__hint-text form__hint-text--dark form__estimate margin__top--small">You will
-                        receive
-                        ≈ <span class="form__hint-text-icon margin__right--small"><img
-                                src="https://www.tidebit.one/icons/eth.png" alt="coin_icon"></span><span
-                            class="form__hint-text--amount">0 ETH</span><span
-                            class="button__pill margin__left--small">BEP
-                            20</span></div>
+                    <div class="form__hint-text form__hint-text--dark form__estimate margin__top--small">
+                        You will receive ≈
+                        <span class="form__hint-text-icon margin__right--small">
+                            <img src="https://www.tidebit.one/icons/eth.png" alt="coin_icon">
+                        </span>
+                        <span class="form__hint-text--amount">
+                            0
+                            <span class="form__hint-text--unit">ETH</span>
+                        </span>
+                        <span class="button__pill margin__left--small">BEP
+                            20
+                        </span>
+                    </div>
                     <div class="form__walletconnected">
                         <div class="form__walletconnected-amount-box form__hint-text">Available: <span
                                 class="form__walletconnected-amount">0
@@ -401,7 +420,7 @@
                             <span class="form__to-icon">
                                 <img src="https://dex-bin.bnbstatic.com/static/images/swap/metamask.svg" alt="metamask">
                             </span>
-                            <span class="form__to-address">0x88e3bB...29480dad</span>
+                            <span class="form__to-address"></span>
                         </div>
                         <div class="form__hint-text">This is the destination address of the To network</div>
                         <div class="form__outline-box margin__top--medium button button button__block">
@@ -414,8 +433,10 @@
                             <div class="form__outline-box-icon"><i class="fas fa-info-circle"></i></div>
                             <div class="form__outline-box-title">
                                 <div class="form__title">Reminder</div>
-                                <div class="form__hint-text form__amount-minimum">1. The minimum amount is 110 ETH</div>
-                                <div class="form__hint-text form__amount-maximumn">2. The maximum amount is 10000 USDT
+                                <div class="form__hint-text form__amount-minimum">1. The minimum amount is <span>110
+                                        ETH</span></div>
+                                <div class="form__hint-text form__amount-maximumn">2. The maximum amount is <span>110
+                                        ETH</span>
                                 </div>
                             </div>
                         </div>
@@ -481,4 +502,6 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="./assets/javascript/bundle.js"></script>
+
 </html>

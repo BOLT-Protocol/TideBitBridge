@@ -7,13 +7,34 @@ folder = "TideBitBridge"
 static = "./build/frontend/"
 debug = false
 
+[contract]
+CROSS_CHAIN_CHANNEL = "0xc72c4102da25b3a84d8e892fcce7a74c2f3588f0"
+
 [blockchain]
 type = "ethereum"
 
 [database]
 type = "firebase"
 
+[extension]
+CHROME_ID = "nkbihfbeogaeaoehlefnkodbefgpgknn",
+FIREFOX_ID = "webextension@metamask.io"
+
+
 [api]
 pathname = [
   "get | /,/version | Static.Utils.readPackageInfo"
 ]
+
+[blockchain.ethereum_mainnet]
+protocol = "https:"
+hostname = "rpc.tidewallet.io"
+port = 443
+path = "/"
+
+
+[blockchain.ethereum_ropsten]
+protocol = "https:"
+hostname = " ropsten.tidewallet.io"
+port = 443
+path = "/"
