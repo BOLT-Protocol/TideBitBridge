@@ -17,7 +17,7 @@ type = "ethereum"
 type = "firebase"
 
 [extension]
-CHROME_ID = "nkbihfbeogaeaoehlefnkodbefgpgknn",
+CHROME_ID = "nkbihfbeogaeaoehlefnkodbefgpgknn"
 FIREFOX_ID = "webextension@metamask.io"
 
 
@@ -35,6 +35,6 @@ path = "/"
 
 [blockchain.ethereum_ropsten]
 protocol = "https:"
-hostname = " ropsten.tidewallet.io"
+hostname = "ropsten.tidewallet.io"
 port = 443
 path = "/"
