@@ -142,6 +142,7 @@ ethereum.on("chainChanged", (_chainId) => {
 
 listScrollView();
 
+// -- test code
 (() => {
   const data = rlp.encode("0xd86b75c7");
   // console.log(data);

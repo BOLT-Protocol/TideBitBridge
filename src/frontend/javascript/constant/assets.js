@@ -32,6 +32,17 @@ export const assets = [
     chainId: "0x3",
   },
   {
+    symbol: "TBT",
+    name: "TideBit Token",
+    network: "ropsten",
+    available: true,
+    icon: "https://www.tidebit.one/icons/eth.png",
+    dailyLimit: 1000,
+    minimumAmount: 1,
+    maximumAmount: 25,
+    chainId: "0x3",
+  },
+  {
     symbol: "BCH",
     name: "Bitcoin Cash",
     network: "mainnet",

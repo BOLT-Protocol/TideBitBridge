@@ -35,22 +35,71 @@ const checkLoginStatus = () => {
 };
 
 const sendTransaction = async (account, amount, asset) => {
-  return await utils.to(
-    ethereum.request({
-      method: "eth_sendTransaction",
-      params: [
-        {
-          from: account,
-          to: contract.CROSS_CHAIN_CHANNEL,
-          // gas: "0x76c0", // 30400
-          gasPrice: await rpc.getGasPrice(asset), //"0x9184e72a000", // 10000000000000
-          value: utils.bnToHex(utils.toWei(parseFloat(amount), "ether")), // 2441406250
-          data: "0xd86b75c7", //"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
-          chainId: asset.chainId, // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
-        },
-      ],
-    })
-  );
+  let error, result;
+  switch (asset.symbol) {
+    case "TBT":
+      // approve
+      [error, result] = await utils.to(
+        ethereum.request({
+          method: "eth_sendTransaction",
+          params: [
+            {
+              from: account,
+              to: contract.ERC20_CONTRACT,
+              gasPrice: await rpc.getGasPrice(asset),
+              value: 0,
+              data: utils.erc20ContractData(
+                "0x095ea7b3",
+                contract.TIDEBIT_BRIDGE_CONTRACT,
+                amount
+              ),
+              chainId: asset.chainId, // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+            },
+          ],
+        })
+      );
+      if (!error) {
+        // teleport
+        [error, result] = await utils.to(
+          ethereum.request({
+            method: "eth_sendTransaction",
+            params: [
+              {
+                from: account,
+                to: contract.ERC20_CONTRACT,
+                gasPrice: await rpc.getGasPrice(asset),
+                value: 0,
+                data: utils.erc20ContractData(
+                  "0x04ddf0a5",
+                  contract.ERC20_CONTRACT,
+                  amount
+                ),
+                chainId: asset.chainId, // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+              },
+            ],
+          })
+        );
+      }
+      return [error, result];
+    default:
+      [error, result] = await utils.to(
+        ethereum.request({
+          method: "eth_sendTransaction",
+          params: [
+            {
+              from: account,
+              to: contract.TIDEBIT_BRIDGE_CONTRACT,
+              // gas: "0x76c0", // 30400
+              gasPrice: await rpc.getGasPrice(asset), //"0x9184e72a000", // 10000000000000
+              value: utils.bnToHex(utils.toWei(parseFloat(amount), "ether")), // 2441406250
+              data: "0xd86b75c7", //"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
+              chainId: asset.chainId, // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+            },
+          ],
+        })
+      );
+      return [error, result];
+  }
 };
 
 const connect = async () => {

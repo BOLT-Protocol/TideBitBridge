@@ -19,6 +19,16 @@ export const to = (promise) => {
     .catch((err) => [err, null]);
 };
 
+export const pad = (data, length) => {
+  if (data.startsWith("0x")) {
+    data = data.slice(2);
+  }
+  while (data.length < (length || 64)) {
+    data = "0" + data;
+  }
+  return data;
+};
+
 export const request = (opts) => {
   const xhr = new XMLHttpRequest();
   // xhr.responseType = "arraybuffer";
@@ -73,19 +83,24 @@ export const toWei = (amount, unit) => {
       return amount * Math.pow(10, 9);
   }
 };
-const bitnot =(bn) =>{
+const bitnot = (bn) => {
   bn = -bn;
-  var bin = (bn).toString(2)
-  var prefix = '';
-  while (bin.length % 8) { bin = '0' + bin; }
-  if ('1' === bin[0] && -1 !== bin.slice(1).indexOf('1')) {
-    prefix = '11111111';
+  var bin = bn.toString(2);
+  var prefix = "";
+  while (bin.length % 8) {
+    bin = "0" + bin;
   }
-  bin = bin.split('').map(function (i) {
-    return '0' === i ? '1' : '0';
-  }).join('');
-  return BigInt('0b' + prefix + bin) + BigInt(1);
-}
+  if ("1" === bin[0] && -1 !== bin.slice(1).indexOf("1")) {
+    prefix = "11111111";
+  }
+  bin = bin
+    .split("")
+    .map(function (i) {
+      return "0" === i ? "1" : "0";
+    })
+    .join("");
+  return BigInt("0b" + prefix + bin) + BigInt(1);
+};
 
 export const bnToHex = (bn) => {
   let pos = true;
@@ -118,12 +133,12 @@ export const bnToHex = (bn) => {
   return hex;
 };
 
-export const encodeMessage = (message, amount) => {
-  const encodedMessage =
-    "0x" +
-    // pack("erc20Func") +//-- 錯的
-    userAccount?.slice(2) +
-    utils.bnToHex(utils.toWei(amount, "ether")).slice(2) +
-    (!message ? "" : encodeURI(message).toString("hex"));
-  return encodedMessage;
+export const erc20ContractData = (funcName, contract, amount) => {
+  const data =
+    funcName +
+    pad(contract, 64) +
+    pad(bnToHex(toWei(amount, "ether")), 64);
+    console.log('funcName', funcName);
+    console.log('data', data);
+  return data;
 };
