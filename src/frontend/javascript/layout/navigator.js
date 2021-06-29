@@ -3,7 +3,7 @@ class NavigatorElement extends HTMLElement {
     super();
   }
   handleNavigatorType() {
-    if (window.innerWidth < 1080) {
+    if (window.innerWidth < 1200) {
       this.setAttribute("type", "header");
     } else {
       this.setAttribute("type", "drawer");
